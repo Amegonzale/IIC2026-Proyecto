@@ -3,7 +3,7 @@ import numpy as np
 import json
 
 df_estados = pd.read_csv("data/estados.csv")
-df_poblacion = pd.read_csv("data/poblacion_estados.csv")
+df_poblacion = pd.read_csv("data/poblacionUSA_clean.csv")
 df_shootings = pd.read_csv("data/shootings.csv")
 
 
@@ -28,7 +28,8 @@ def add_ave_population():
         sum = 0
 
         for num in df_poblacion.get(estado):
-            num = num.replace(",", "")
+            # print(num)
+            # num = num.replace(",", "")
             sum = sum + int(num)
 
         average = sum // 35
@@ -80,14 +81,20 @@ def add_average_deaths():
                                   == year, ['total_deaths']]
             deaths = deaths.iloc[0].total_deaths
 
+            wounded = df_state.loc[df_state['Date']
+                                  == year, ['total_wounded']]
+            wounded = wounded.iloc[0].total_wounded
+
             population = df_citizens.loc[df_citizens['Año'] == int(year), [
                 state]]
             population = population.iloc[0].at[state]
 
-            rate = int(deaths) / int(population.replace(",", ""))
+            affected = int(deaths) + int (wounded)
+
+            rate = int(affected) / int(population)
 
             sum += rate
-            sum_deaths += deaths
+            sum_deaths += deaths + wounded
             # print(state, year, deaths, population)
             # print("rate:", rate)
             # print("sum:", sum)
@@ -96,7 +103,7 @@ def add_average_deaths():
 
         # print(f"average {state}: {average}")
 
-        average_deaths.append(average * 10000000)
+        average_deaths.append(average * 1000000)
         total_deaths.append(sum_deaths)
 
     # print(average_deaths)
@@ -107,10 +114,13 @@ def add_average_deaths():
     return total_deaths, average_deaths
 
 
+
 df_estados, df_shootings = clean_up(df_estados, df_shootings)
 ave_population = add_ave_population()
 total_shootings, ave_shootings = add_total_shootings()
 total_deaths, average_deaths = add_average_deaths()
+
+df_estados["method2"] = (df_estados["total deaths"] / df_estados["ave population"]) * 100000
 
 print(df_estados)
 
