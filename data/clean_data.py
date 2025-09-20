@@ -30,7 +30,6 @@ with open(input_file, "r", encoding="utf-8") as infile, open(output_file, "w", n
             # 3. Limpiar cada celda quitando comas de miles (solo dentro de números)
             cleaned_row = [cell.replace(",", "") for cell in row]
 
-            ##new = []
             for cell in cleaned_row:
                 if cell != "":
                     new.append(cell)

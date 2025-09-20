@@ -103,13 +103,13 @@ def add_average_deaths():
 
         # print(f"average {state}: {average}")
 
-        average_deaths.append(average * 1000000)
+        average_deaths.append(average * 100000)
         total_deaths.append(sum_deaths)
 
     # print(average_deaths)
 
     df_estados["total deaths"] = total_deaths
-    df_estados["ave deaths"] = average_deaths
+    df_estados["rate (method 1)"] = average_deaths
 
     return total_deaths, average_deaths
 
@@ -120,9 +120,14 @@ ave_population = add_ave_population()
 total_shootings, ave_shootings = add_total_shootings()
 total_deaths, average_deaths = add_average_deaths()
 
-df_estados["method2"] = (df_estados["total deaths"] / df_estados["ave population"]) * 100000
+df_estados["rate (method 2)"] = (df_estados["total deaths"] / df_estados["ave population"]) * 100000
 
 print(df_estados)
+
+top5 = df_estados.sort_values(by="rate (method 2)", ascending=False).head(5)
+
+print("\nTop 5")
+print(top5)
 
 df_estados.to_json('data.json', orient='records')
 df_estados.to_csv('data.csv', header=False, index=False)
