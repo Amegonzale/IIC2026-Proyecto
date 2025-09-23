@@ -1,1 +1,52 @@
-[{"code":"CT","state":"Connecticut","ave_population":522335,"total_shootings":8,"ave_shootings":0.2,"total_deaths":62,"rate_1":0.0055732599,"rate_2":11.8697770588},{"code":"VA","state":"Virginia","ave_population":1153872,"total_shootings":24,"ave_shootings":0.7,"total_deaths":135,"rate_1":0.0090785664,"rate_2":11.6997379259},{"code":"OR","state":"Oregon","ave_population":542952,"total_shootings":12,"ave_shootings":0.3,"total_deaths":62,"rate_1":0.0049895618,"rate_2":11.4190573016},{"code":"CO","state":"Colorado","ave_population":745734,"total_shootings":14,"ave_shootings":0.4,"total_deaths":78,"rate_1":0.0099015996,"rate_2":10.4594935996},{"code":"AL","state":"Alabama","ave_population":736679,"total_shootings":28,"ave_shootings":0.8,"total_deaths":64,"rate_1":0.0801442597,"rate_2":8.6876373563}]
+[
+    {
+        "code": "CT",
+        "state": "Connecticut",
+        "ave_population": 522335,
+        "total_shootings": 8,
+        "ave_shootings": 0.2,
+        "total_deaths": 62,
+        "rate_1": 0.0055732599,
+        "rate_2": 11.8697770588
+    },
+    {
+        "code": "VA",
+        "state": "Virginia",
+        "ave_population": 1153872,
+        "total_shootings": 24,
+        "ave_shootings": 0.7,
+        "total_deaths": 135,
+        "rate_1": 0.0090785664,
+        "rate_2": 11.6997379259
+    },
+    {
+        "code": "OR",
+        "state": "Oregon",
+        "ave_population": 542952,
+        "total_shootings": 12,
+        "ave_shootings": 0.3,
+        "total_deaths": 62,
+        "rate_1": 0.0049895618,
+        "rate_2": 11.4190573016
+    },
+    {
+        "code": "CO",
+        "state": "Colorado",
+        "ave_population": 745734,
+        "total_shootings": 14,
+        "ave_shootings": 0.4,
+        "total_deaths": 78,
+        "rate_1": 0.0099015996,
+        "rate_2": 10.4594935996
+    },
+    {
+        "code": "AL",
+        "state": "Alabama",
+        "ave_population": 736679,
+        "total_shootings": 28,
+        "ave_shootings": 0.8,
+        "total_deaths": 64,
+        "rate_1": 0.0801442597,
+        "rate_2": 8.6876373563
+    }
+]
