@@ -41,7 +41,11 @@ function createMap() {
             [0.8, 'rgb(117,107,177)'], [1, 'rgb(84,39,143)']
         ],
         colorbar: {
-            thickness: 20
+            thickness: 20,
+            title: {
+                text: 'Shooting Rate<br>(per 100,000 inhabitants)',
+                side: 'right'
+            },
         },
         marker: {
             line: {
@@ -82,4 +86,42 @@ fetch('top5.json').then(response => response.json()).then(json => {
 
 function createTop() {
     console.log(top_5)
+    const states = top_5.map((dato) => dato.state);
+    const codes = top_5.map((dato) => dato.code);
+    const values = top_5.map((dato) => dato.rate_2);
+
+    const config = {
+        displayModeBar: false,
+    };
+
+    var data = [{
+        type: 'bar',
+        x: states.map((state, i) => `${state} (${codes[i]})`),
+        y: values,
+        text: values.map(val => val.toFixed(3)),
+        hoverinfo: 'none',
+        marker: {
+            color: values.map(val => {
+                const normVal = val / 12;
+                if (normVal <= 0) return 'rgb(242,240,247)';
+                else if (normVal <= 0.2) return 'rgb(218,218,235)';
+                else if (normVal <= 0.4) return 'rgb(188,189,220)';
+                else if (normVal <= 0.6) return 'rgb(158,154,200)';
+                else if (normVal <= 0.8) return 'rgb(117,107,177)';
+                else return 'rgb(84,39,143)';
+            }),
+        }
+    }];
+
+    var layout = {
+        title: { text: 'Top 5 states with highest average shooting rates 1990-2024' },
+        xaxis: { title: 'States' },
+        yaxis: { 
+            title: { text: 'Shooting Rate (per 100,000 inhabitants)' }, // TODO arreglar
+            automargin: true
+        }
+    };
+
+    Plotly.newPlot("top5", data, layout, config);
+
 }
