@@ -1,0 +1,17 @@
+#graph {
+    background: #000000;
+
+    display: flex;
+    margin: auto;
+}
+
+div.plot-container.plotly {
+    width: auto !important;
+    margin: auto;
+}
+
+text.gtitle {
+
+    font-size: 1.7em !important;
+
+}
