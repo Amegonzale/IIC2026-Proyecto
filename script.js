@@ -31,6 +31,7 @@ function createMap() {
     var data = [{
         type: 'choropleth',
         locationmode: 'USA-states',
+        showscale: false,
         locations: codes,
         z: values,
         text: states,
@@ -41,17 +42,6 @@ function createMap() {
             [0.4, 'rgb(188,189,220)'], [0.6, 'rgb(158,154,200)'],
             [0.8, 'rgb(117,107,177)'], [1, 'rgb(84,39,143)']
         ],
-        colorbar: {
-            thickness: 20,
-            title: {
-                text: 'Shooting Rate<br>(per 100,000 inhabitants)',
-                side: 'right'
-            },
-            xanchor: 'right',
-            yanchor: 'middle',
-            x: 0
-        },
-        ticklabelposition: 'outside bottom',
         marker: {
             line: {
                 color: 'rgb(255,255,255)',
@@ -62,7 +52,7 @@ function createMap() {
 
     // acá esta el layout para que se centre el mapa en Chile
     var layout = {
-        title: { text: 'Average shootings in US states 1990-2024' },
+        title: { text: 'Death rate by school shootings in US states 1990-2024 <br><sub>per 100,000 inhabitants</sub>' },
         width: 800,
         height: 500,
         geo: {
@@ -89,49 +79,6 @@ fetch('top10.json').then(response => response.json()).then(json => {
     top_10 = json;
 }).then(() => createTop10())
 
-function createTop5() {
-    console.log(top_5)
-    const states = top_5.map((dato) => dato.state);
-    const codes = top_5.map((dato) => dato.code);
-    const values = top_5.map((dato) => dato.rate_2);
-
-    const config = {
-        displayModeBar: false,
-    };
-
-    var data = [{
-        type: 'bar',
-        x: states.map((state, i) => `${state} (${codes[i]})`),
-        y: values,
-        text: values.map(val => val.toFixed(3)),
-        hoverinfo: 'none',
-        marker: {
-            color: values.map(val => {
-                const normVal = val / 12;
-                if (normVal <= 0) return 'rgb(242,240,247)';
-                else if (normVal <= 0.2) return 'rgb(218,218,235)';
-                else if (normVal <= 0.4) return 'rgb(188,189,220)';
-                else if (normVal <= 0.6) return 'rgb(158,154,200)';
-                else if (normVal <= 0.8) return 'rgb(117,107,177)';
-                else return 'rgb(84,39,143)';
-            }),
-        }
-    }];
-
-    var layout = {
-        title: { text: 'Top 5 states with highest average shooting rates 1990-2024' },
-        xaxis: { title: 'States', showgrid: false },
-        yaxis: {
-            title: { text: 'Shooting Rate (per 100,000 inhabitants)' },
-            automargin: true,
-            showgrid: false
-        },
-    };
-
-    Plotly.newPlot("top5", data, layout, config);
-
-}
-
 function createTop10() {
     console.log(top_10)
     const states = top_10.map((dato) => dato.state);
@@ -146,7 +93,7 @@ function createTop10() {
         type: 'bar',
         x: states.map((state, i) => `${state} (${codes[i]})`),
         y: values,
-        text: values.map(val => val.toFixed(3)),
+        text: values.map(val => val.toFixed(1)),
         hoverinfo: 'none',
         marker: {
             color: values.map(val => {
@@ -164,10 +111,9 @@ function createTop10() {
     var layout = {
         width: 800,
         height: 400,
-        title: { text: 'Top 10 states with highest average shooting rates 1990-2024' },
+        title: { text: 'Top 10 states with highest death rate by school shootings 1990-2024<br> <sub>per 100,000 inhabitants</sub>' },
         xaxis: { title: 'States', showgrid: false },
         yaxis: {
-            title: { text: 'Shooting Rate (per 100,000 inhabitants)' },
             automargin: true,
             showgrid: false
         },

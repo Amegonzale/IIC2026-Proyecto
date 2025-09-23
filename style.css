@@ -1,6 +1,6 @@
 #graph {
-    background: #000000;
-
+    background: #FAFAFA;
+    padding: 20px;
     display: flex;
     margin: auto;
     flex-direction: column;
