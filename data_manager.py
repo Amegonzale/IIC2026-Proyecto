@@ -129,7 +129,14 @@ top5 = df_estados.sort_values(by="rate_2", ascending=False).head(5)
 print("\nTop_5")
 print(top5)
 
+top10 = df_estados.sort_values(by="rate_2", ascending=False).head(10)
+
+print("\nTop_10")
+print(top10)
+
 df_estados.to_json('data.json', orient='records')
 df_estados.to_csv('data.csv', header=False, index=False)
 
 top5.to_json('top5.json', orient='records')
+
+top10.to_json('top10.json', orient='records')

@@ -3,15 +3,39 @@
 
     display: flex;
     margin: auto;
+    flex-direction: column;
 }
 
 div.plot-container.plotly {
     width: auto !important;
-    margin: auto;
+    margin: auto !important;
+}
+
+div#top10.js-plotly-plot {
+    width: 100% !important;
+    display: flex;
 }
 
 text.gtitle {
 
     font-size: 1.7em !important;
+
+}
+
+div#top10 text.gtitle {
+
+    font-size: 1.3em !important;
+
+}
+
+div#top10 text.ytitle {
+
+    font-size: 0.7em !important;
+
+}
+
+text.hycb901233title {
+
+    font-size: 0.7em !important;
 
 }
