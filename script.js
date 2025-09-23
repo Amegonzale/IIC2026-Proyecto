@@ -115,11 +115,12 @@ function createTop() {
 
     var layout = {
         title: { text: 'Top 5 states with highest average shooting rates 1990-2024' },
-        xaxis: { title: 'States' },
+        xaxis: { title: 'States', showgrid: false },
         yaxis: { 
-            title: { text: 'Shooting Rate (per 100,000 inhabitants)' }, // TODO arreglar
-            automargin: true
-        }
+            title: { text: 'Shooting Rate (per 100,000 inhabitants)' },
+            automargin: true,
+            showgrid: false
+        },
     };
 
     Plotly.newPlot("top5", data, layout, config);
