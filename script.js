@@ -38,9 +38,9 @@ function createMap() {
         zmin: 0,
         zmax: 12,
         colorscale: [
-            [0, 'rgb(242,240,247)'], [0.2, 'rgb(218,218,235)'],
-            [0.4, 'rgb(188,189,220)'], [0.6, 'rgb(158,154,200)'],
-            [0.8, 'rgb(117,107,177)'], [1, 'rgb(84,39,143)']
+            [0, 'rgba(229, 222, 249, 1)'], [0.2, 'rgba(210, 198, 236, 1)'],
+            [0.4, 'rgba(183, 177, 222, 1)'], [0.6, 'rgba(135, 127, 203, 1)'],
+            [0.8, 'rgba(88, 76, 157, 1)'], [1, 'rgba(69, 31, 120, 1)']
         ],
         marker: {
             line: {
@@ -98,12 +98,12 @@ function createTop10() {
         marker: {
             color: values.map(val => {
                 const normVal = val / 12;
-                if (normVal <= 0) return 'rgb(242,240,247)';
-                else if (normVal <= 0.2) return 'rgb(218,218,235)';
-                else if (normVal <= 0.4) return 'rgb(188,189,220)';
-                else if (normVal <= 0.6) return 'rgb(158,154,200)';
-                else if (normVal <= 0.8) return 'rgb(117,107,177)';
-                else return 'rgb(84,39,143)';
+                if (normVal <= 0) return 'rgba(229, 222, 249, 1)';
+                else if (normVal <= 0.2) return 'rgba(210, 198, 236, 1)';
+                else if (normVal <= 0.4) return 'rgba(183, 177, 222, 1)';
+                else if (normVal <= 0.6) return 'rgba(135, 127, 203, 1)';
+                else if (normVal <= 0.8) return 'rgba(88, 76, 157, 1)';
+                else return 'rgba(69, 31, 120, 1)';
             }),
         }
     }];
