@@ -1,6 +1,6 @@
 #graph {
-    background: #FAFAFA;
-    padding: 20px;
+    background: #ebe9ed;
+
     display: flex;
     margin: auto;
     flex-direction: column;
@@ -16,26 +16,50 @@ div#top10.js-plotly-plot {
     display: flex;
 }
 
+/* tspan {
+    font-size: 0.7em;
+} */
+
 text.gtitle {
 
-    font-size: 1.7em !important;
+    font-size: 1.5em !important;
 
 }
 
+
 div#top10 text.gtitle {
 
-    font-size: 1.3em !important;
+    font-size: 1.2em !important;
 
+}
+
+div#top10 {
+    margin-top: -20px;
 }
 
 div#top10 text.ytitle {
 
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
 
+
+}
+
+g.geolayer {
+    transform: translateY(10px);
+}
+
+g.g-ytitle {
+    transform: translateY(-10px) translateX(-8px);
 }
 
 text.hycb901233title {
 
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
 
+
+}
+
+g.cbtitle text {
+    font-size: 0.8em !important;
+    transform: rotate(-90deg) translateY(-180px) translateX(-390px);
 }
