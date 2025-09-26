@@ -62,7 +62,7 @@ function createMap() {
 
     // acá esta el layout para que se centre el mapa en Chile
     var layout = {
-        title: { text: 'How endangered is your child at school?<br><sup>School shooting rates in US states from 1990 to 2024</sup>' },
+        title: { text: 'How endangered is your child at school?<br><sup>School shooting rates in US states (1990 - 2024)</sup>' },
         width: 800,
         height: 500,
         geo: {
