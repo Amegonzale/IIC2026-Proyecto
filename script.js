@@ -42,9 +42,9 @@ function createMap() {
             [0.8, 'rgb(117,107,177)'], [1, 'rgb(84,39,143)']
         ],
         colorbar: {
-            thickness: 20,
+            thickness: 10,
             title: {
-                text: 'Shooting Rate<br>(per 100,000 inhabitants)',
+                text: 'Shooting Rate (per 100,000 students)',
                 side: 'right'
             },
             xanchor: 'right',
@@ -62,7 +62,7 @@ function createMap() {
 
     // acá esta el layout para que se centre el mapa en Chile
     var layout = {
-        title: { text: 'Average shootings in US states 1990-2024' },
+        title: { text: 'How endangered is your child at school?<br><sup>School shooting rates in US states from 1990 to 2024</sup>' },
         width: 800,
         height: 500,
         geo: {
@@ -164,13 +164,16 @@ function createTop10() {
     var layout = {
         width: 800,
         height: 400,
-        title: { text: 'Top 10 states with highest average shooting rates 1990-2024' },
+        title: { text: 'Top 10 states with highest average shooting rates' },
         xaxis: { title: 'States', showgrid: false },
         yaxis: {
-            title: { text: 'Shooting Rate (per 100,000 inhabitants)' },
+            title: { text: 'Shooting Rate (per 100,000 students)' },
             automargin: true,
             showgrid: false
         },
+        dragmode: false,
+        staticPlot: true,
+        responsive: true,
     };
 
     Plotly.newPlot("top10", data, layout, config);

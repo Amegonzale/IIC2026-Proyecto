@@ -1,5 +1,5 @@
 #graph {
-    background: #000000;
+    background: #ebe9ed;
 
     display: flex;
     margin: auto;
@@ -16,9 +16,13 @@ div#top10.js-plotly-plot {
     display: flex;
 }
 
+/* tspan {
+    font-size: 0.7em;
+} */
+
 text.gtitle {
 
-    font-size: 1.7em !important;
+    font-size: 1.5em !important;
 
 }
 
@@ -28,14 +32,29 @@ div#top10 text.gtitle {
 
 }
 
+div#top10 {
+    margin-top: -20px;
+}
+
 div#top10 text.ytitle {
 
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
 
+
+}
+
+g.g-ytitle {
+    transform: translateY(-10px) translateX(-8px);
 }
 
 text.hycb901233title {
 
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
 
+
+}
+
+g.cbtitle text {
+    font-size: 0.8em !important;
+    transform: rotate(-90deg) translateY(-180px) translateX(-390px);
 }
