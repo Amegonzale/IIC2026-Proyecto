@@ -52,7 +52,7 @@ function createMap() {
 
     // acá esta el layout para que se centre el mapa en Chile
     var layout = {
-        title: { text: 'How endangered is your child at school?<br><sup>Average shooting rates in US states (1990 - 2024)</sup>' },
+        title: { text: 'How endangered is your child at school?<br><sup>Average shooting rates by 100.000 students in US states (1990 - 2024)</sup>' },
         width: 800,
         height: 500,
         geo: {
@@ -111,7 +111,7 @@ function createTop10() {
     var layout = {
         width: 800,
         height: 400,
-        title: { text: 'Top 5 states with highest average shooting rates' },
+        title: { text: 'Top 10 states with highest average shooting rates' },
         xaxis: { title: 'States', showgrid: false },
         yaxis: {
             automargin: true,

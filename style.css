@@ -23,6 +23,7 @@ div#top10.js-plotly-plot {
 text.gtitle {
 
     font-size: 1.5em !important;
+    fill: #10071d !important;
 
 }
 
