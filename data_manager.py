@@ -119,8 +119,8 @@ ave_population = add_ave_population()
 total_shootings, ave_shootings = add_total_shootings()
 total_deaths, average_deaths = add_average_deaths()
 
-df_estados["rate_2"] = (df_estados["total_deaths"] /
-                        df_estados["ave_population"]) * 100000
+df_estados["rate_2"] = round(((df_estados["total_deaths"] /
+                               df_estados["ave_population"]) * 100000), ndigits=1)
 
 print(df_estados)
 

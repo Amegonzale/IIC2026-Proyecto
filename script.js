@@ -146,7 +146,7 @@ function createTop10() {
         type: 'bar',
         x: states.map((state, i) => `${state} (${codes[i]})`),
         y: values,
-        text: values.map(val => val.toFixed(3)),
+        text: values.map(val => val.toFixed(1)),
         hoverinfo: 'none',
         marker: {
             color: values.map(val => {
