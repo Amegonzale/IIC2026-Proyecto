@@ -64,6 +64,19 @@ function createMap() {
             landcolor: "white",
             visible: false,
         },
+
+        images: [
+            {
+                source: "usmap.png",
+                x: 0.472,
+                y: 0.438,
+                sizex: 1.05,
+                sizey: 1.05,
+                xanchor: "center",
+                yanchor: "middle",
+                layer: "above"
+            }
+        ],
         dragmode: false,
         staticPlot: true,
         responsive: true,
@@ -117,6 +130,10 @@ function createTop10() {
             automargin: true,
             showgrid: false
         },
+        dragmode: false,
+        staticPlot: true,
+        responsive: true,
+
     };
 
     Plotly.newPlot("top10", data, layout, config);
