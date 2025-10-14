@@ -12,6 +12,12 @@ fetch('data.json')
         );
         const zmaxGlobal = Math.max(...allValues);
 
+        const color = [
+            [0, 'rgba(255, 200, 200, 1)'], [0.2, 'rgba(255, 161, 161, 1)'],
+            [0.4, 'rgba(255, 125, 125, 1)'], [0.6, 'rgba(255, 86, 86, 1)'],
+            [0.8, 'rgba(253, 55, 55, 1)'], [1, 'rgba(255, 21, 21, 1)']
+        ];
+
         const years = Object.keys(data).sort();
         const frames = [];
         const locationsAll = [];
@@ -31,7 +37,7 @@ fetch('data.json')
                     locations: states,
                     z: values,
                     text: texts,
-                    colorscale: "Viridis",
+                    colorscale: color,
                     colorbar: { title: "Valor" },
                     zmin: 0,
                     zmax: zmaxGlobal
@@ -51,7 +57,7 @@ fetch('data.json')
             z: valuesAll,
             text: textsAll,
             hoverinfo: "text",
-            colorscale: "Viridis",
+            colorscale: color,
             colorbar: { title: "Valor" },
             zmin: 0,
             zmax: zmaxGlobal
@@ -62,32 +68,6 @@ fetch('data.json')
             geo: {
                 scope: "usa",
             },
-            updatemenus: [{
-                x: 0.1,
-                y: 0.05,
-                yanchor: "top",
-                xanchor: "left",
-                showactive: true,
-                direction: "left",
-                type: "buttons",
-                pad: { t: 30, r: 10 },
-                buttons: [
-                {
-                    label: "▶️",
-                    method: "animate",
-                    args: [null, {
-                    fromcurrent: true,
-                    frame: { duration: 1000, redraw: true },
-                    transition: { duration: 500, easing: "linear" }
-                    }]
-                },
-                {
-                    label: "⏸️",
-                    method: "animate",
-                    args: [[null], { mode: "immediate", frame: { duration: 0 }, transition: { duration: 0 } }]
-                }
-                ]
-            }],
             sliders: [{
                 active: 0,
                 pad: { t: 50 },
