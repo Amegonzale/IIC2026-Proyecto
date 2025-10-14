@@ -1,141 +1,110 @@
 // Crear variables globales
 const global_data = "data.json";
-let datos;
-let top_5;
-let top_10;
+
+
 
 // Cargar datos y actualizar variables globales
 fetch('data.json')
     .then(response => response.json())
-    .then(json => {
-        datos = json;
+    .then(data => {
+        const allValues = Object.values(data).flatMap(yearData =>
+            Object.values(yearData).map(d => d.value)
+        );
+        const zmaxGlobal = Math.max(...allValues);
+
+        const color = [
+            [0, 'rgba(255, 200, 200, 1)'], [0.2, 'rgba(255, 161, 161, 1)'],
+            [0.4, 'rgba(255, 125, 125, 1)'], [0.6, 'rgba(255, 86, 86, 1)'],
+            [0.8, 'rgba(253, 55, 55, 1)'], [1, 'rgba(255, 21, 21, 1)']
+        ];
+
+        const years = Object.keys(data).sort();
+        const frames = [];
+        const locationsAll = [];
+        const valuesAll = [];
+        const textsAll = [];
+
+        years.forEach(year => {
+            const states = Object.keys(data[year]);
+            const values = states.map(s => data[year][s].value);
+            const texts = states.map(s => data[year][s].info);
+
+            frames.push({
+                name: year,
+                data: [{
+                    type: "choropleth",
+                    locationmode: "USA-states",
+                    locations: states,
+                    z: values,
+                    text: texts,
+                    colorscale: color,
+                    colorbar: { title: "Valor" },
+                    zmin: 0,
+                    zmax: zmaxGlobal
+                }]
+            });
+            if (year === years[0]) {
+                locationsAll.push(...states);
+                valuesAll.push(...values);
+                textsAll.push(...texts);
+            }
+        });
+
+        const dataInit = [{
+            type: "choropleth",
+            locationmode: "USA-states",
+            locations: locationsAll,
+            z: valuesAll,
+            text: textsAll,
+            hoverinfo: "text",
+            colorscale: color,
+            colorbar: { title: "Valor" },
+            zmin: 0,
+            zmax: zmaxGlobal
+        }];
+
+        const layout = {
+            title: { text: 'How endangered is your child at school?<br><sup>Number of public school students who brought firearms to or possessed firearms at school per 100,000 students enrolled</sup>' },
+            geo: {
+                scope: "usa",
+            },
+            sliders: [{
+                active: 0,
+                pad: { t: 50 },
+                len: 0.9,
+                x: 0.1,
+                y: 0,
+                currentvalue: { visible: false },
+                bgcolor:" #cfcfcfff",
+                steps: years.map(year => ({
+                    label: year,
+                    method: "animate",
+                    args: [[year], {
+                        mode: "immediate",
+                        frame: { duration: 500, redraw: true },
+                        transition: { duration: 300 }
+                    }]
+                }))
+            }],
+            images: [
+                {
+                    source: "usmap.png",
+                    x: 0.517,
+                    y: 0.45,
+                    sizex: 0.92,
+                    sizey: 0.92,
+                    xanchor: "center",
+                    yanchor: "middle",
+                    layer: "above"
+                }
+            ]
+        };
+
+        Plotly.newPlot("map", dataInit, layout, {
+            scrollZoom: false,
+            displayModeBar: false,
+            responsive: false
+        }).then(() => {
+            Plotly.addFrames("map", frames);
+        });
     })
-    // Crear el mapa
-    .then(() => createMap())
-
-
-function createMap() {
-    // TODO: Crear mapa con Plotly
-    console.log(datos)
-    const states = datos.map((dato) => dato.state);
-    const codes = datos.map((dato) => dato.code);
-    const values = datos.map((dato) => dato.rate_2)
-
-    console.log(states)
-
-    // configuración de plotly
-    const config = {
-        displayModeBar: false, // sacar la barra de herramientas de plotly
-    };
-
-    var data = [{
-        type: 'choropleth',
-        locationmode: 'USA-states',
-        showscale: false,
-        locations: codes,
-        z: values,
-        text: states,
-        zmin: 0,
-        zmax: 12,
-        colorscale: [
-            [0, 'rgba(229, 222, 249, 1)'], [0.2, 'rgba(210, 198, 236, 1)'],
-            [0.4, 'rgba(183, 177, 222, 1)'], [0.6, 'rgba(135, 127, 203, 1)'],
-            [0.8, 'rgba(88, 76, 157, 1)'], [1, 'rgba(69, 31, 120, 1)']
-        ],
-        marker: {
-            line: {
-                color: 'rgb(255,255,255)',
-                width: 1
-            }
-        }
-    }];
-
-    // acá esta el layout para que se centre el mapa en Chile
-    var layout = {
-        title: { text: 'How endangered is your child at school?<br><sup>Average shooting rates by 100.000 students in US states (1990 - 2024)</sup>' },
-        width: 800,
-        height: 500,
-        geo: {
-
-            scope: 'usa',
-            showlakes: true,
-            lakecolor: 'rgb(255,255,255)',
-            resolution: 50,
-            landcolor: "white",
-            visible: false,
-        },
-
-        images: [
-            {
-                source: "usmap.png",
-                x: 0.472,
-                y: 0.438,
-                sizex: 1.05,
-                sizey: 1.05,
-                xanchor: "center",
-                yanchor: "middle",
-                layer: "above"
-            }
-        ],
-        dragmode: false,
-        staticPlot: true,
-        responsive: true,
-
-    };
-
-
-    Plotly.newPlot("graph", data, layout, config);
-
-}
-
-fetch('top10.json').then(response => response.json()).then(json => {
-    top_10 = json;
-}).then(() => createTop10())
-
-function createTop10() {
-    console.log(top_10)
-    const states = top_10.map((dato) => dato.state);
-    const codes = top_10.map((dato) => dato.code);
-    const values = top_10.map((dato) => dato.rate_2);
-
-    const config = {
-        displayModeBar: false,
-    };
-
-    var data = [{
-        type: 'bar',
-        x: states.map((state, i) => `${state} (${codes[i]})`),
-        y: values,
-        text: values.map(val => val.toFixed(1)),
-        hoverinfo: 'none',
-        marker: {
-            color: values.map(val => {
-                const normVal = val / 12;
-                if (normVal <= 0) return 'rgba(229, 222, 249, 1)';
-                else if (normVal <= 0.2) return 'rgba(210, 198, 236, 1)';
-                else if (normVal <= 0.4) return 'rgba(183, 177, 222, 1)';
-                else if (normVal <= 0.6) return 'rgba(135, 127, 203, 1)';
-                else if (normVal <= 0.8) return 'rgba(88, 76, 157, 1)';
-                else return 'rgba(69, 31, 120, 1)';
-            }),
-        }
-    }];
-
-    var layout = {
-        width: 800,
-        height: 400,
-        title: { text: 'Top 10 states with highest average shooting rates' },
-        xaxis: { title: 'States', showgrid: false },
-        yaxis: {
-            automargin: true,
-            showgrid: false
-        },
-        dragmode: false,
-        staticPlot: true,
-        responsive: true,
-
-    };
-
-    Plotly.newPlot("top10", data, layout, config);
-
-}

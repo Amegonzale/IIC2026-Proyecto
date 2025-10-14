@@ -1,1 +1,2774 @@
-[{"code":"AL","state":"Alabama","ave_population":736679,"total_shootings":28,"ave_shootings":0.8,"total_deaths":64,"rate_1":0.0801442597,"rate_2":8.6876373563},{"code":"AK","state":"Alaska","ave_population":126994,"total_shootings":2,"ave_shootings":0.1,"total_deaths":6,"rate_1":0.1505040003,"rate_2":4.7246326598},{"code":"AZ","state":"Arizona","ave_population":905326,"total_shootings":14,"ave_shootings":0.4,"total_deaths":21,"rate_1":0.00255643,"rate_2":2.319606418},{"code":"AR","state":"Arkansas","ave_population":462154,"total_shootings":12,"ave_shootings":0.3,"total_deaths":35,"rate_1":0.0058360848,"rate_2":7.5732331647},{"code":"CA","state":"California","ave_population":5814551,"total_shootings":102,"ave_shootings":2.9,"total_deaths":210,"rate_1":0.0028937424,"rate_2":3.6116288257},{"code":"CO","state":"Colorado","ave_population":745734,"total_shootings":14,"ave_shootings":0.4,"total_deaths":78,"rate_1":0.0099015996,"rate_2":10.4594935996},{"code":"CT","state":"Connecticut","ave_population":522335,"total_shootings":8,"ave_shootings":0.2,"total_deaths":62,"rate_1":0.0055732599,"rate_2":11.8697770588},{"code":"DE","state":"Delaware","ave_population":119160,"total_shootings":7,"ave_shootings":0.2,"total_deaths":7,"rate_1":0.0201431371,"rate_2":5.8744545149},{"code":"FL","state":"Florida","ave_population":2417811,"total_shootings":52,"ave_shootings":1.5,"total_deaths":93,"rate_1":0.0009947109,"rate_2":3.8464544995},{"code":"GA","state":"Georgia","ave_population":1480463,"total_shootings":40,"ave_shootings":1.1,"total_deaths":74,"rate_1":0.0391903694,"rate_2":4.9984363},{"code":"HI","state":"Hawaii","ave_population":178483,"total_shootings":2,"ave_shootings":0.1,"total_deaths":1,"rate_1":0.0156379257,"rate_2":0.5602774494},{"code":"ID","state":"Idaho","ave_population":261178,"total_shootings":3,"ave_shootings":0.1,"total_deaths":3,"rate_1":0.0272751324,"rate_2":1.1486419224},{"code":"IL","state":"Illinois","ave_population":1952070,"total_shootings":35,"ave_shootings":1.0,"total_deaths":61,"rate_1":0.0015475267,"rate_2":3.1248879395},{"code":"IN","state":"Indiana","ave_population":1000935,"total_shootings":13,"ave_shootings":0.4,"total_deaths":12,"rate_1":0.0,"rate_2":1.1988790481},{"code":"IA","state":"Iowa","ave_population":496944,"total_shootings":9,"ave_shootings":0.3,"total_deaths":30,"rate_1":0.0506075151,"rate_2":6.0368975176},{"code":"KS","state":"Kansas","ave_population":469174,"total_shootings":3,"ave_shootings":0.1,"total_deaths":8,"rate_1":0.0175651947,"rate_2":1.7051243249},{"code":"KY","state":"Kentucky","ave_population":660887,"total_shootings":13,"ave_shootings":0.4,"total_deaths":51,"rate_1":0.0043453322,"rate_2":7.7169016791},{"code":"LA","state":"Louisiana","ave_population":741353,"total_shootings":20,"ave_shootings":0.6,"total_deaths":38,"rate_1":0.0121032895,"rate_2":5.1257633003},{"code":"ME","state":"Maine","ave_population":198229,"total_shootings":3,"ave_shootings":0.1,"total_deaths":0,"rate_1":0.0,"rate_2":0.0},{"code":"MD","state":"Maryland","ave_population":825377,"total_shootings":18,"ave_shootings":0.5,"total_deaths":25,"rate_1":0.0032098329,"rate_2":3.0289189061},{"code":"MA","state":"Massachusetts","ave_population":922876,"total_shootings":16,"ave_shootings":0.5,"total_deaths":24,"rate_1":0.0,"rate_2":2.6005660565},{"code":"MI","state":"Michigan","ave_population":1592268,"total_shootings":30,"ave_shootings":0.9,"total_deaths":66,"rate_1":0.0220320853,"rate_2":4.1450308616},{"code":"MN","state":"Minnesota","ave_population":831835,"total_shootings":8,"ave_shootings":0.2,"total_deaths":36,"rate_1":0.0131360021,"rate_2":4.3277813509},{"code":"MS","state":"Mississippi","ave_population":487212,"total_shootings":12,"ave_shootings":0.3,"total_deaths":25,"rate_1":0.0130904574,"rate_2":5.1312365048},{"code":"MO","state":"Missouri","ave_population":882743,"total_shootings":18,"ave_shootings":0.5,"total_deaths":33,"rate_1":0.0064115552,"rate_2":3.7383474012},{"code":"MT","state":"Montana","ave_population":151227,"total_shootings":2,"ave_shootings":0.1,"total_deaths":2,"rate_1":0.0373546205,"rate_2":1.3225151593},{"code":"NE","state":"Nebraska","ave_population":296266,"total_shootings":6,"ave_shootings":0.2,"total_deaths":6,"rate_1":0.0086800507,"rate_2":2.0252070774},{"code":"NV","state":"Nevada","ave_population":353892,"total_shootings":10,"ave_shootings":0.3,"total_deaths":21,"rate_1":0.0536190154,"rate_2":5.9340137669},{"code":"NH","state":"New Hampshire","ave_population":186071,"total_shootings":1,"ave_shootings":0.0,"total_deaths":0,"rate_1":0.0,"rate_2":0.0},{"code":"NJ","state":"New Jersey","ave_population":1279945,"total_shootings":2,"ave_shootings":0.1,"total_deaths":4,"rate_1":0.0060707737,"rate_2":0.3125134283},{"code":"NM","state":"New Mexico","ave_population":318296,"total_shootings":8,"ave_shootings":0.2,"total_deaths":10,"rate_1":0.0181392651,"rate_2":3.1417297107},{"code":"NY","state":"New York","ave_population":2711180,"total_shootings":26,"ave_shootings":0.7,"total_deaths":25,"rate_1":0.0011277681,"rate_2":0.9221077169},{"code":"NC","state":"North Carolina","ave_population":1332439,"total_shootings":37,"ave_shootings":1.1,"total_deaths":37,"rate_1":0.0,"rate_2":2.7768625806},{"code":"ND","state":"North Dakota","ave_population":112498,"total_shootings":0,"ave_shootings":0.0,"total_deaths":0,"rate_1":0.0,"rate_2":0.0},{"code":"OH","state":"Ohio","ave_population":1762637,"total_shootings":26,"ave_shootings":0.7,"total_deaths":43,"rate_1":0.0,"rate_2":2.4395266864},{"code":"OK","state":"Oklahoma","ave_population":638033,"total_shootings":8,"ave_shootings":0.2,"total_deaths":18,"rate_1":0.0245332197,"rate_2":2.8211706918},{"code":"OR","state":"Oregon","ave_population":542952,"total_shootings":12,"ave_shootings":0.3,"total_deaths":62,"rate_1":0.0049895618,"rate_2":11.4190573016},{"code":"PA","state":"Pennsylvania","ave_population":1736647,"total_shootings":39,"ave_shootings":1.1,"total_deaths":73,"rate_1":0.0016877918,"rate_2":4.2035024965},{"code":"RI","state":"Rhode Island","ave_population":145424,"total_shootings":1,"ave_shootings":0.0,"total_deaths":2,"rate_1":0.0398385741,"rate_2":1.3752888107},{"code":"SC","state":"South Carolina","ave_population":698362,"total_shootings":16,"ave_shootings":0.5,"total_deaths":21,"rate_1":0.0035990513,"rate_2":3.0070364653},{"code":"SD","state":"South Dakota","ave_population":132048,"total_shootings":1,"ave_shootings":0.0,"total_deaths":1,"rate_1":0.0212817803,"rate_2":0.7573003756},{"code":"TN","state":"Tennessee","ave_population":921542,"total_shootings":38,"ave_shootings":1.1,"total_deaths":51,"rate_1":0.0056879788,"rate_2":5.5342024563},{"code":"TX","state":"Texas","ave_population":4380824,"total_shootings":68,"ave_shootings":1.9,"total_deaths":131,"rate_1":0.0036149905,"rate_2":2.9903050202},{"code":"UT","state":"Utah","ave_population":543341,"total_shootings":6,"ave_shootings":0.2,"total_deaths":4,"rate_1":0.00433031,"rate_2":0.7361859311},{"code":"VT","state":"Vermont","ave_population":93965,"total_shootings":2,"ave_shootings":0.1,"total_deaths":7,"rate_1":0.1959842821,"rate_2":7.4495822913},{"code":"VA","state":"Virginia","ave_population":1153872,"total_shootings":24,"ave_shootings":0.7,"total_deaths":135,"rate_1":0.0090785664,"rate_2":11.6997379259},{"code":"WA","state":"Washington","ave_population":991174,"total_shootings":29,"ave_shootings":0.8,"total_deaths":44,"rate_1":0.0052245137,"rate_2":4.4391802045},{"code":"WV","state":"West Virginia","ave_population":288793,"total_shootings":2,"ave_shootings":0.1,"total_deaths":5,"rate_1":0.0498860354,"rate_2":1.7313439038},{"code":"WI","state":"Wisconsin","ave_population":844526,"total_shootings":16,"ave_shootings":0.5,"total_deaths":27,"rate_1":0.0350913269,"rate_2":3.1970596524},{"code":"WY","state":"Wyoming","ave_population":93500,"total_shootings":2,"ave_shootings":0.1,"total_deaths":6,"rate_1":0.1745246385,"rate_2":6.4171122995}]
+{
+  "2011": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 1.6,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 4.6,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 4.0,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 21.7,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 2.5,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 7.8,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 7.6,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 1.6,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 3.9,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 8.4,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 0.5,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 6.1,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 0.3,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 4.6,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 0.6,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 6.2,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 3.4,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 23.0,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 2.1,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 1.4,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 7.0,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 7.0,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 1.7,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 6.5,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 0.4,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 22.5,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 3.7,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 5.2,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 9.9,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.4,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 15.7,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 9.4,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 4.4,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 14.3,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 4.3,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 3.8,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 10.4,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.2,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 1.4,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 5.2,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 7.8,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 7.5,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 7.9,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 0.0,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 4.4,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 4.1,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 12.1,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 4.2,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 4.5,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 10.0,
+      "info": ""
+    }
+  },
+  "2012": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 12.2,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 3.8,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 3.6,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 23.7,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 5.1,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 4.9,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 8.2,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 2.3,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 3.6,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 10.5,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 0.5,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 1.8,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 0.2,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 4.7,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 0.8,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 9.8,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 5.3,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 27.3,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 1.1,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 1.3,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 11.3,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 7.3,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 2.5,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 7.9,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 0.9,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 10.5,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 5.6,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 5.6,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 9.0,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.7,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 15.4,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 6.6,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 4.9,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 7.9,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 4.1,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 4.8,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 8.0,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.9,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 0.0,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 10.1,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 10.0,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 6.4,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 7.8,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 0.0,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 3.3,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 4.0,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 9.5,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 0.4,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 5.4,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 24.0,
+      "info": ""
+    }
+  },
+  "2013": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 13.0,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 3.1,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 3.1,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 23.1,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 5.0,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 5.1,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 4.4,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 5.3,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 4.4,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 7.8,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 0.0,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 2.4,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 0.2,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 4.9,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 0.6,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 8.1,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 6.6,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 30.1,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 0.0,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 0.8,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 9.5,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 4.5,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 3.8,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 9.9,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 0.5,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 11.1,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 5.2,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 5.8,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 11.8,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.4,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 17.4,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 8.7,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 6.4,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 14.4,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 5.9,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 3.4,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 6.2,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.4,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 1.4,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 14.5,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 3.8,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 5.7,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 1.8,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 16.1,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 12.4,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 3.5,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 8.6,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 75.1,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 4.9,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 14.0,
+      "info": ""
+    }
+  },
+  "2014": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 9.0,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 3.0,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 3.2,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 25.1,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 5.1,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 2.5,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 6.6,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 2.2,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 4.9,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 7.0,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 0.0,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 2.1,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 9.0,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 5.4,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 0.6,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 7.0,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 7.3,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 19.9,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 0.5,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 0.9,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 10.0,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 3.3,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 3.0,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 3.7,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 1.0,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 9.0,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 5.4,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 2.6,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 7.0,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.5,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 7.3,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 9.0,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 5.4,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 3.8,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 5.1,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 4.2,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 7.0,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 2.6,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 0.0,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 10.0,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 0.8,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 5.7,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 2.0,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 0.0,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 4.6,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 4.2,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 9.0,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 78.5,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 7.2,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 13.8,
+      "info": ""
+    }
+  },
+  "2015": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 13.4,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 5.3,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 2.6,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 22.8,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 6.0,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 3.0,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 7.6,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 5.2,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 5.2,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 10.5,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 18.7,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 3.1,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 8.7,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 7.7,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 0.2,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 7.1,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 7.6,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 24.8,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 0.0,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 1.0,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 6.2,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 3.8,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 3.5,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 4.9,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 0.9,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 11.0,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 3.2,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 1.9,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 4.9,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.2,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 23.2,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 6.8,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 7.4,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 10.1,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 4.8,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 5.5,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 4.9,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.0,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 3.5,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 11.9,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 7.4,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 12.1,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 2.0,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 0.0,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 5.7,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 4.1,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 3.9,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 101.3,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 5.9,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 13.7,
+      "info": ""
+    }
+  },
+  "2016": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 9.4,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 5.3,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 7.0,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 28.8,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 5.5,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 3.3,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 7.5,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 2.2,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 4.7,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 11.6,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 13.8,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 2.7,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 9.3,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 6.4,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 7.1,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 10.3,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 8.5,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 23.7,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 1.7,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 1.6,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 2.6,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 2.9,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 3.2,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 7.9,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 1.0,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 6.1,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 3.8,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 5.9,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 4.4,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.5,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 20.8,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 5.0,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 6.5,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 3.6,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 4.7,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 4.2,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 6.3,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.4,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 6.3,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 13.2,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 6.6,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 12.7,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 2.7,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 0.0,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 5.7,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 5.1,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 11.3,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 83.6,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 6.6,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 24.4,
+      "info": ""
+    }
+  },
+  "2017": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 5.4,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 7.5,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 3.7,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 29.8,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 6.0,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 5.3,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 4.1,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 4.4,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 6.1,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 11.5,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 14.4,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 2.3,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 9.5,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 7.0,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 7.4,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 8.4,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 6.6,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 25.0,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 3.3,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 1.7,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 2.3,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 8.8,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 3.7,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 3.8,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 1.0,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 8.0,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 5.9,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 5.8,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 8.9,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.6,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 17.3,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 10.2,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 8.0,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 16.1,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 4.1,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 5.9,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 8.4,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.6,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 0.0,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 15.0,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 11.6,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 12.8,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 3.6,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 7.0,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 5.7,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 5.7,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 14.0,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 7.0,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 6.4,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 4.2,
+      "info": ""
+    }
+  },
+  "2018": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 5.4,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 6.1,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 2.4,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 25.4,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 4.9,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 5.6,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 4.4,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 5.8,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 6.4,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 9.4,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 11.6,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 0.6,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 0.0,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 6.8,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 11.3,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 10.0,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 5.0,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 20.8,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 4.4,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 1.3,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 2.6,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 5.7,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 2.0,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 1.9,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 0.4,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 6.0,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 7.0,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 5.7,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 2.8,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.4,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 11.7,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 9.8,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 7.5,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 7.9,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 3.4,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 4.7,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 7.1,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.3,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 3.5,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 11.5,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 7.2,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 9.8,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 3.3,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 17.3,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 1.1,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 4.0,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 9.9,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 4.9,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 4.8,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 7.4,
+      "info": ""
+    }
+  },
+  "2019": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 2.3,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 6.1,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 0.9,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 13.9,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 4.2,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 5.0,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 3.1,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 5.0,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 6.6,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 7.7,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 9.4,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 1.6,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 0.0,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 5.4,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 3.7,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 5.4,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 6.4,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 20.8,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 1.1,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 1.4,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 0.8,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 4.3,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 2.4,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 3.0,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 0.3,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 5.3,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 3.6,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 6.2,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 4.5,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.4,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 13.6,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 4.4,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 5.6,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 3.4,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 2.3,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 4.7,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 3.6,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 1.0,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 0.7,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 6.1,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 2.9,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 8.5,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 2.7,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 9.6,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 3.5,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 4.4,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 7.9,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 5.3,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 3.0,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 9.5,
+      "info": ""
+    }
+  },
+  "2020": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 2.2,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 1.5,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 0.9,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 9.7,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 0.7,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 2.6,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 3.5,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 0.7,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 3.5,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 3.8,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 0.0,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 2.3,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 2.2,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 3.1,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 5.1,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 4.4,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 1.8,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 11.4,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 2.3,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 0.3,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 1.0,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 3.2,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 1.3,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 4.1,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 0.1,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 11.6,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 2.8,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 2.7,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 7.1,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 0.1,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 1.6,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 2.0,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 1.7,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 4.3,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 1.5,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 2.9,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 1.9,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 0.7,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 0.7,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 6.3,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 4.3,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 4.7,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 2.0,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 2.4,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 2.4,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 1.0,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 0.0,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 0.4,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 2.4,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 11.9,
+      "info": ""
+    }
+  },
+  "2021": {
+    "AL": {
+      "stateName": "Alabama",
+      "value": 30.3,
+      "info": ""
+    },
+    "AK": {
+      "stateName": "Alaska",
+      "value": 6.9,
+      "info": ""
+    },
+    "AZ": {
+      "stateName": "Arizona",
+      "value": 2.6,
+      "info": ""
+    },
+    "AR": {
+      "stateName": "Arkansas",
+      "value": 19.6,
+      "info": ""
+    },
+    "CA": {
+      "stateName": "California",
+      "value": 10.0,
+      "info": ""
+    },
+    "CO": {
+      "stateName": "Colorado",
+      "value": 10.9,
+      "info": ""
+    },
+    "CT": {
+      "stateName": "Connecticut",
+      "value": 6.9,
+      "info": ""
+    },
+    "DE": {
+      "stateName": "Delaware",
+      "value": 5.0,
+      "info": ""
+    },
+    "FL": {
+      "stateName": "Florida",
+      "value": 9.0,
+      "info": ""
+    },
+    "GA": {
+      "stateName": "Georgia",
+      "value": 16.7,
+      "info": ""
+    },
+    "HI": {
+      "stateName": "Hawaii",
+      "value": 2.3,
+      "info": ""
+    },
+    "ID": {
+      "stateName": "Idaho",
+      "value": 2.5,
+      "info": ""
+    },
+    "IL": {
+      "stateName": "Illinois",
+      "value": 29.2,
+      "info": ""
+    },
+    "IN": {
+      "stateName": "Indiana",
+      "value": 9.6,
+      "info": ""
+    },
+    "IA": {
+      "stateName": "Iowa",
+      "value": 12.3,
+      "info": ""
+    },
+    "KS": {
+      "stateName": "Kansas",
+      "value": 9.3,
+      "info": ""
+    },
+    "KY": {
+      "stateName": "Kentucky",
+      "value": 7.9,
+      "info": ""
+    },
+    "LA": {
+      "stateName": "Louisiana",
+      "value": 21.4,
+      "info": ""
+    },
+    "ME": {
+      "stateName": "Maine",
+      "value": 4.6,
+      "info": ""
+    },
+    "MD": {
+      "stateName": "Maryland",
+      "value": 3.7,
+      "info": ""
+    },
+    "MA": {
+      "stateName": "Massachusetts",
+      "value": 2.8,
+      "info": ""
+    },
+    "MI": {
+      "stateName": "Michigan",
+      "value": 10.8,
+      "info": ""
+    },
+    "MN": {
+      "stateName": "Minnesota",
+      "value": 8.0,
+      "info": ""
+    },
+    "MS": {
+      "stateName": "Mississippi",
+      "value": 8.4,
+      "info": ""
+    },
+    "MO": {
+      "stateName": "Missouri",
+      "value": 1.2,
+      "info": ""
+    },
+    "MT": {
+      "stateName": "Montana",
+      "value": 15.3,
+      "info": ""
+    },
+    "NE": {
+      "stateName": "Nebraska",
+      "value": 5.2,
+      "info": ""
+    },
+    "NV": {
+      "stateName": "Nevada",
+      "value": 10.7,
+      "info": ""
+    },
+    "NH": {
+      "stateName": "New Hampshire",
+      "value": 4.7,
+      "info": ""
+    },
+    "NJ": {
+      "stateName": "New Jersey",
+      "value": 1.0,
+      "info": ""
+    },
+    "NM": {
+      "stateName": "New Mexico",
+      "value": 24.3,
+      "info": ""
+    },
+    "NY": {
+      "stateName": "New York",
+      "value": 7.5,
+      "info": ""
+    },
+    "NC": {
+      "stateName": "North Carolina",
+      "value": 10.5,
+      "info": ""
+    },
+    "ND": {
+      "stateName": "North Dakota",
+      "value": 2.6,
+      "info": ""
+    },
+    "OH": {
+      "stateName": "Ohio",
+      "value": 5.5,
+      "info": ""
+    },
+    "OK": {
+      "stateName": "Oklahoma",
+      "value": 5.0,
+      "info": ""
+    },
+    "OR": {
+      "stateName": "Oregon",
+      "value": 13.9,
+      "info": ""
+    },
+    "PA": {
+      "stateName": "Pennsylvania",
+      "value": 2.4,
+      "info": ""
+    },
+    "RI": {
+      "stateName": "Rhode Island",
+      "value": 2.9,
+      "info": ""
+    },
+    "SC": {
+      "stateName": "South Carolina",
+      "value": 23.2,
+      "info": ""
+    },
+    "SD": {
+      "stateName": "South Dakota",
+      "value": 7.1,
+      "info": ""
+    },
+    "TN": {
+      "stateName": "Tennessee",
+      "value": 17.8,
+      "info": ""
+    },
+    "TX": {
+      "stateName": "Texas",
+      "value": 6.2,
+      "info": ""
+    },
+    "UT": {
+      "stateName": "Utah",
+      "value": 12.9,
+      "info": ""
+    },
+    "VT": {
+      "stateName": "Vermont",
+      "value": 8.3,
+      "info": ""
+    },
+    "VA": {
+      "stateName": "Virginia",
+      "value": 11.1,
+      "info": ""
+    },
+    "WA": {
+      "stateName": "Washington",
+      "value": 14.5,
+      "info": ""
+    },
+    "WV": {
+      "stateName": "West Virginia",
+      "value": 5.5,
+      "info": ""
+    },
+    "WI": {
+      "stateName": "Wisconsin",
+      "value": 5.5,
+      "info": ""
+    },
+    "WY": {
+      "stateName": "Wyoming",
+      "value": 19.3,
+      "info": ""
+    }
+  }
+}
