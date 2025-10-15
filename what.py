@@ -5,48 +5,30 @@ import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 import plotly.express as px
 
-df_states = pd.read_csv(
-    "https://raw.githubusercontent.com/jasonong/List-of-US-States/master/states.csv")
-df_data = pd.read_json('data.json')
-df_states = df_states.drop([8], axis=0)
-lista = []
-list_states = []
-list_abrev = []
-list_year = []
-list_value = []
-list_info = []
-for state in df_states['State']:
-    for year in range(2011, 2022):
-        df_new = df_states.loc[df_states['State'] == state]
-        # print(df_new)
-        list_states.append(state)
-        a = df_new['Abbreviation'].iloc[0]
-        list_abrev.append(a)
-        # print(a)
-        list_year.append(year)
-        list_value.append(round(df_data[year][a]['value'], ndigits=1))
-
-df = pd.DataFrame()
-df['State'] = list_states
-df['Year'] = list_year
-df['Abbreviation'] = list_abrev
-df['Value'] = list_value
-print(df)
-
 
 def create_choropleth(df, color_scale, showscale=True):
     fig = go.Choropleth(
-        locations=df['region'],
-        locationmode='country names',
-        z=df['valence'],
-        text=df['valence'],
+        locations=df['Abbreviation'],
+        locationmode='USA-states',
+        z=df['Value'],
+        text=df['Value'],
         colorscale=color_scale,
         zmin=0,
-        zmax=1,
-        colorbar=dict(title='Valence', x=1.05) if showscale else None,
+        zmax=100,
+        colorbar=dict(title='Valor', x=1.05) if showscale else None,
         marker_line_width=0,
         showscale=showscale
     )
+
+    return fig
+
+
+def create_linegraph(df, color_scale, showscale=True):
+    fig = go.Scatter(
+        x=df['Year'],
+        y=df['Value'],
+        name='Name',
+        line=dict(color='royalblue', width=4))
 
     return fig
 
@@ -64,23 +46,30 @@ app.layout = html.Div([
 ])
 
 
-def plot(df_2019, df_2020):
+def plot(df_data, df_2020):
     color_scale = pc.sequential.Aggrnyl
 
-    fig = make_subplots(rows=1, cols=2, subplot_titles=('2019', '2020'),
-                        specs=[[{'type': 'choropleth'}, {'type': 'choropleth'}]])
-    fig.add_trace(create_choropleth(df_2019[df_2019['date'] == df_2019['date'].min(
+    fig = make_subplots(rows=1, cols=2, subplot_titles=('Name', 'Name'),
+                        specs=[[{'type': 'choropleth'}, {'type': 'xy'}]])
+    fig.add_trace(create_choropleth(df_data[df_data['Year'] == df_data['Year'].min(
     )], color_scale, showscale=True), row=1, col=1)
-    fig.add_trace(create_choropleth(df_2020[df_2020['date'] == df_2020['date'].min(
-    )], color_scale, showscale=True), row=1, col=2)
+    fig.add_trace(create_linegraph(
+        df_data[df_data['State'] == 'Arizona'], color_scale, showscale=True), row=1, col=2)
 
-    frames = create_frames(df_2019, df_2020, color_scale)
+    fig.add_shape(go.layout.Shape(type='line', yref="paper",
+                                  xref="x",
+                                  x0=0,
+                                  y0=0,
+                                  x1=0,
+                                  y1=100,),
+                  row=1, col=2)
+    frames = create_frames(df_data, df_data, color_scale)
 
     fig.frames = frames
     # Initial traces
 
     slider = create_slider(
-        sorted(set(df_2019['date'].unique()) | set(df_2020['date'].unique())))
+        sorted(set(df_data['Year'].unique()) | set(df_data['Year'].unique())))
     buttons = create_play_pause_buttons()
 
     fig.update_layout(
@@ -89,7 +78,6 @@ def plot(df_2019, df_2020):
         geo=dict(
             showframe=False,
             showcoastlines=False,
-            projection_type='natural earth'
         ),
         margin=dict(l=0, r=0, b=0, t=0),
         width=1900,
@@ -97,13 +85,13 @@ def plot(df_2019, df_2020):
     )
 
     fig.update_geos(
+        scope="usa",
         showframe=False,
         showcoastlines=False,
-        projection_type='natural earth'
     )
 
     # Hide the colorbar for the second choropleth trace
-    fig.data[1].update(showscale=True)
+    fig.data[1].update(showlegend=True)
 
     # Make the figure take up the whole window
     fig.layout.width = None
@@ -112,31 +100,32 @@ def plot(df_2019, df_2020):
     return fig
 
 
-def create_frames(df_2019, df_2020, color_scale):
+def create_frames(df_data, df_2020, color_scale):
     frames = []
-    dates = sorted(set(df_2019['date'].unique()) |
-                   set(df_2020['date'].unique()))
-    for date in dates:
-        frame_df_2019 = df_2019[df_2019['date'] == date]
-        frame_df_2020 = df_2020[df_2020['date'] == date]
+    years = sorted(set(df_data['Year'].unique()) |
+                   set(df_data['Year'].unique()))
+    for year in years:
+        frame_df_1 = df_data[df_data['Year'] == year]
+        frame_df_2 = df_data[df_data['State'] == 'Arizona']
         frames.append(go.Frame(
             data=[
-                create_choropleth(frame_df_2019, color_scale),
-                create_choropleth(frame_df_2020, color_scale)
+                create_choropleth(frame_df_1, color_scale),
+                create_linegraph(frame_df_2, color_scale)
             ],
-            name=date
+            name=str(year)
         ))
+    # print(frames)
     return frames
 
 
-def create_slider(dates):
+def create_slider(years):
     return {
         'active': 0,
         'yanchor': 'top',
         'xanchor': 'left',
         'currentvalue': {
             'font': {'size': 17},
-            'prefix': 'Date: ',
+            'prefix': 'Year: ',
             'visible': True,
             'xanchor': 'right'
         },
@@ -146,10 +135,10 @@ def create_slider(dates):
         'x': 0.1,
         'y': -0.1,
         'steps': [{
-            'args': [[date], {'frame': {'duration': 300, 'redraw': True}, 'mode': 'immediate'}],
-            'label': date,
+            'args': [[str(year)], {'frame': {'duration': 300, 'redraw': True}, 'mode': 'immediate'}],
+            'label': str(year),
             'method': 'animate'
-        } for date in dates]
+        } for year in years]
     }
 
 
@@ -199,6 +188,23 @@ def update_map(click_data, selected_states):
     # state_colors = {state: 'white' for state in df_states['Abbreviation']}
     # for state in selected_states:
     #     state_colors[state] = 'blue'
+
+    # df_states = pd.read_csv(
+    #     "https://raw.githubusercontent.com/jasonong/List-of-US-States/master/states.csv")
+    # df_data = pd.read_json('data.json')
+    # df_states = df_states.drop([8], axis=0)
+    df = pd.read_csv('data.csv')
+
+    print(df)
+
+    data = {
+        'name': 'Name',
+        'State': df['State'].to_list(),
+        'Year': [str(year) for year in (df['Year'].to_list())],
+        'Abbreviation': df['Abbreviation'].to_list(),
+        'Value': df['Value'].to_list()
+    }
+
     data_2019 = {
         'year': 2019,
         'region': ['Germany', 'Denmark', 'Japan', 'France', 'Italy', 'Spain', 'Canada', 'Brazil', 'India', 'Australia',
@@ -229,8 +235,11 @@ def update_map(click_data, selected_states):
 
     df_2019 = pd.DataFrame.from_dict(data_2019)
     df_2020 = pd.DataFrame.from_dict(data_2020)
-    fig = plot(df_2019, df_2020)
 
+    df_data = pd.DataFrame.from_dict(data)
+    fig = plot(df_data, df_data)
+    # print(df_2019)
+    # print(df_data)
     return fig, selected_states
 
 
