@@ -1,10 +1,11 @@
 // Crear variables globales
 const global_data = "data.json";
 let selectedState = null;
+let currentYear = null;
 let allStatesData = {};
 
 // Line graph ñom
-function createLineGraph(data, selectedState = null) {
+function createLineGraph(data, selectedState = null, currentYear = null) {
     const years = Object.keys(data).sort();
     const states = new Set();
     
@@ -13,6 +14,7 @@ function createLineGraph(data, selectedState = null) {
     }); // Consigo states
     
     const traces = []; // Cada linea
+    const selectedTrace = []; // Asi la puedo poner encima
     
     states.forEach(state => {
         const xValues = [];
@@ -25,8 +27,15 @@ function createLineGraph(data, selectedState = null) {
         
         // Si fue seleccionado en el mapa o grafico
         const isSelected = selectedState === state;
+
+        const markerSizes = years.map(year => {
+            if (currentYear && year === currentYear) {
+                return isSelected ? 15 : 10; 
+            }
+            return isSelected ? 6 : 3;
+        });
         
-        traces.push({
+        const trace = {
             x: xValues,
             y: yValues,
             type: 'scatter',
@@ -37,13 +46,22 @@ function createLineGraph(data, selectedState = null) {
                 width: isSelected ? 3 : 1 // Al seleccionarlo se pone mas waton
             },
             marker: {
-                size: isSelected ? 6 : 3, // El puntito igual
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'lightgray' : 'rgba(113, 175, 255, 1)')
+                size: markerSizes,
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'lightgray' : 'rgba(113, 175, 255, 1)'),
+                line: {
+                    width: currentYear ? years.map(y => y === currentYear ? 2 : 0) : 0,
+                    color: 'white'
+                }
             },
             opacity: selectedState && !isSelected ? 0.3 : 1,
             showlegend: false
-        });
+        };
+
+        if (isSelected) selectedTrace.push(trace);
+        else traces.push(trace);
     });
+
+    if (selectedTrace.length > 0) traces.push(...selectedTrace);
     
     const layout = {
         title: {
@@ -71,7 +89,7 @@ function createLineGraph(data, selectedState = null) {
     document.getElementById('lineGraph').on('plotly_click', function(eventData) {
         const clickedState = eventData.points[0].data.name;
         selectedState = selectedState === clickedState ? null : clickedState;
-        createLineGraph(allStatesData, selectedState);
+        createLineGraph(allStatesData, selectedState, currentYear);
     });
 }
 
@@ -187,9 +205,22 @@ fetch('data.json')
             if (eventData.points[0] && eventData.points[0].location) {
                 const clickedState = eventData.points[0].location;
                 selectedState = selectedState === clickedState ? null : clickedState;
-                createLineGraph(allStatesData, selectedState);
+                createLineGraph(allStatesData, selectedState, currentYear);
+            }
+        });
+
+        document.getElementById('map').on('plotly_sliderchange', function(eventData) {
+            if (eventData && eventData.slider && eventData.slider.active !== undefined) {
+                const activeIndex = eventData.slider.active;
+                currentYear = years[activeIndex];
+                updateYear(currentYear);
             }
         });
 
     })
     .catch(error => console.error('Error:', error));
+
+function updateYear(year) {
+    currentYear = year;
+    createLineGraph(allStatesData, selectedState, currentYear);
+}
