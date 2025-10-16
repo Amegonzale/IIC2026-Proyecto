@@ -64,3 +64,11 @@ g.cbtitle text {
     font-size: 0.8em !important;
     transform: rotate(-90deg) translateY(-180px) translateX(-390px);
 }
+
+.line-graph-container {
+    margin: auto;
+}
+
+#lineGraph {
+    margin: auto;
+}

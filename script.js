@@ -1,12 +1,86 @@
 // Crear variables globales
 const global_data = "data.json";
+let selectedState = null;
+let allStatesData = {};
 
-
+// Line graph ñom
+function createLineGraph(data, selectedState = null) {
+    const years = Object.keys(data).sort();
+    const states = new Set();
+    
+    years.forEach(year => {
+        Object.keys(data[year]).forEach(state => states.add(state));
+    }); // Consigo states
+    
+    const traces = []; // Cada linea
+    
+    states.forEach(state => {
+        const xValues = [];
+        const yValues = [];
+        
+        years.forEach(year => {
+            xValues.push(year);
+            yValues.push(data[year][state].value);
+        });
+        
+        // Si fue seleccionado en el mapa o grafico
+        const isSelected = selectedState === state;
+        
+        traces.push({
+            x: xValues,
+            y: yValues,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: state,
+            line: {
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'lightgray' : 'rgba(113, 175, 255, 1)'), // No me gusta el color default ;;
+                width: isSelected ? 3 : 1 // Al seleccionarlo se pone mas waton
+            },
+            marker: {
+                size: isSelected ? 6 : 3, // El puntito igual
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'lightgray' : 'rgba(113, 175, 255, 1)')
+            },
+            opacity: selectedState && !isSelected ? 0.3 : 1,
+            showlegend: false
+        });
+    });
+    
+    const layout = {
+        title: {
+            text: selectedState ? `${data[years[0]][selectedState].stateName} Timeline` : 'All States Timeline', // Sujeto a cambios :p
+            font: { size: 14 }
+        },
+        xaxis: {
+            title: 'Year',
+            tickangle: -45
+        },
+        yaxis: {
+            title: 'Rate per 100,000 students'
+        },
+        margin: { l: 50, r: 20, t: 50, b: 50 },
+    };
+    
+    const config = {
+        displayModeBar: false,
+        responsive: true
+    };
+    
+    Plotly.newPlot("lineGraph", traces, layout, config);
+    
+    // Click event desde el el grafico :3
+    document.getElementById('lineGraph').on('plotly_click', function(eventData) {
+        const clickedState = eventData.points[0].data.name;
+        selectedState = selectedState === clickedState ? null : clickedState;
+        createLineGraph(allStatesData, selectedState);
+    });
+}
 
 // Cargar datos y actualizar variables globales
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
+        allStatesData = data;
+        createLineGraph(data);
         const allValues = Object.values(data).flatMap(yearData =>
             Object.values(yearData).map(d => d.value)
         );
@@ -107,4 +181,15 @@ fetch('data.json')
         }).then(() => {
             Plotly.addFrames("map", frames);
         });
+
+        // Click event desde el mapa :3
+        document.getElementById('map').on('plotly_click', function(eventData) {
+            if (eventData.points[0] && eventData.points[0].location) {
+                const clickedState = eventData.points[0].location;
+                selectedState = selectedState === clickedState ? null : clickedState;
+                createLineGraph(allStatesData, selectedState);
+            }
+        });
+
     })
+    .catch(error => console.error('Error:', error));
