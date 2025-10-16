@@ -156,7 +156,7 @@ fetch('data.json')
         }];
 
         const layout = {
-            title: { text: 'How endangered is your child at school?<br><sup>Number of public school students who brought firearms to or possessed firearms at school per 100,000 students enrolled</sup>' },
+            // title: { text: 'How endangered is your child at school?<br><sup>Number of public school students who brought firearms to or possessed firearms at school per 100,000 students enrolled</sup>' },
             geo: {
                 scope: "usa",
             },
@@ -181,10 +181,10 @@ fetch('data.json')
             images: [
                 {
                     source: "usmap.png",
-                    x: 0.517,
-                    y: 0.45,
-                    sizex: 0.92,
-                    sizey: 0.92,
+                    x: 0.52,
+                    y: 0.46,
+                    sizex: 0.79,
+                    sizey: 0.79,
                     xanchor: "center",
                     yanchor: "middle",
                     layer: "above"

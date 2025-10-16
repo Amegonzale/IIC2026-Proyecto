@@ -6,6 +6,11 @@
     flex-direction: column;
 }
 
+.container {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 div.plot-container.plotly {
     width: auto !important;
     margin: auto !important;
@@ -67,8 +72,12 @@ g.cbtitle text {
 
 .line-graph-container {
     margin: auto;
+    align-items: center;
+    justify-content: center; 
+    
 }
 
 #lineGraph {
     margin: auto;
+    padding-top: 15%;
 }
