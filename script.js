@@ -5,7 +5,7 @@ let currentYear = null;
 let allStatesData = {};
 
 // Line graph ñom
-function createLineGraph(data, selectedState = null, currentYear = null) {
+function createLineGraph(data, selectedState = null, currentYear = "2011") {
     const years = Object.keys(data).sort();
     const states = new Set();
     
@@ -86,11 +86,11 @@ function createLineGraph(data, selectedState = null, currentYear = null) {
     Plotly.newPlot("lineGraph", traces, layout, config);
     
     // Click event desde el el grafico :3
-    document.getElementById('lineGraph').on('plotly_click', function(eventData) {
-        const clickedState = eventData.points[0].data.name;
-        selectedState = selectedState === clickedState ? null : clickedState;
-        createLineGraph(allStatesData, selectedState, currentYear);
-    });
+    //document.getElementById('lineGraph').on('plotly_click', function(eventData) {
+    //    const clickedState = eventData.points[0].data.name;
+    //    selectedState = selectedState === clickedState ? null : clickedState;
+    //    createLineGraph(allStatesData, selectedState, currentYear);
+    //});
 }
 
 // Cargar datos y actualizar variables globales
