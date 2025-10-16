@@ -8,33 +8,33 @@ let allStatesData = {};
 function createLineGraph(data, selectedState = null, currentYear = "2011") {
     const years = Object.keys(data).sort();
     const states = new Set();
-    
+
     years.forEach(year => {
         Object.keys(data[year]).forEach(state => states.add(state));
     }); // Consigo states
-    
+
     const traces = []; // Cada linea
     const selectedTrace = []; // Asi la puedo poner encima
-    
+
     states.forEach(state => {
         const xValues = [];
         const yValues = [];
-        
+
         years.forEach(year => {
             xValues.push(year);
             yValues.push(data[year][state].value);
         });
-        
+
         // Si fue seleccionado en el mapa o grafico
         const isSelected = selectedState === state;
 
         const markerSizes = years.map(year => {
             if (currentYear && year === currentYear) {
-                return isSelected ? 15 : 10; 
+                return isSelected ? 15 : 10;
             }
             return isSelected ? 6 : 3;
         });
-        
+
         const trace = {
             x: xValues,
             y: yValues,
@@ -62,7 +62,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
     });
 
     if (selectedTrace.length > 0) traces.push(...selectedTrace);
-    
+
     const layout = {
         title: {
             text: selectedState ? `${data[years[0]][selectedState].stateName} Timeline` : 'All States Timeline', // Sujeto a cambios :p
@@ -77,14 +77,14 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         },
         margin: { l: 50, r: 20, t: 50, b: 50 },
     };
-    
+
     const config = {
         displayModeBar: false,
         responsive: true
     };
-    
+
     Plotly.newPlot("lineGraph", traces, layout, config);
-    
+
     // Click event desde el el grafico :3
     //document.getElementById('lineGraph').on('plotly_click', function(eventData) {
     //    const clickedState = eventData.points[0].data.name;
@@ -130,7 +130,14 @@ fetch('data.json')
                     z: values,
                     text: texts,
                     colorscale: color,
-                    colorbar: { title: "Valor" },
+                    colorbar: {
+                        title: "Valor",
+                        x: -0.1,
+                        xanchor: 'left',
+                        thickness: 8,
+                        len: 0.85,
+                        outlinewidth: 0
+                    },
                     zmin: 0,
                     zmax: zmaxGlobal
                 }]
@@ -150,7 +157,14 @@ fetch('data.json')
             text: textsAll,
             hoverinfo: "text",
             colorscale: color,
-            colorbar: { title: "Valor" },
+            colorbar: {
+                title: "Valor",
+                x: -0.1,
+                xanchor: 'left',
+                thickness: 8,
+                len: 0.85,
+                outlinewidth: 0
+            },
             zmin: 0,
             zmax: zmaxGlobal
         }];
@@ -158,16 +172,16 @@ fetch('data.json')
         const layout = {
             // title: { text: 'How endangered is your child at school?<br><sup>Number of public school students who brought firearms to or possessed firearms at school per 100,000 students enrolled</sup>' },
             geo: {
-                scope: "usa",
+                scope: "usa"
             },
             sliders: [{
                 active: 0,
                 pad: { t: 50 },
-                len: 0.9,
+                len: 1,
                 x: 0.1,
                 y: 0,
                 currentvalue: { visible: false },
-                bgcolor:" #cfcfcfff",
+                bgcolor: " #cfcfcfff",
                 steps: years.map(year => ({
                     label: year,
                     method: "animate",
@@ -189,19 +203,28 @@ fetch('data.json')
                     yanchor: "middle",
                     layer: "above"
                 }
-            ]
+            ],
+            margin: {
+                l: 0,
+                r: 0,
+                b: 0,
+                t: 0,
+                pad: 2
+            },
+            width: 780,
+            height: 500,
         };
 
-        Plotly.newPlot("map", dataInit, layout, {
+        Plotly.newPlot("choroplethMap", dataInit, layout, {
             scrollZoom: false,
             displayModeBar: false,
             responsive: false
         }).then(() => {
-            Plotly.addFrames("map", frames);
+            Plotly.addFrames("choroplethMap", frames);
         });
 
         // Click event desde el mapa :3
-        document.getElementById('map').on('plotly_click', function(eventData) {
+        document.getElementById('choroplethMap').on('plotly_click', function (eventData) {
             if (eventData.points[0] && eventData.points[0].location) {
                 const clickedState = eventData.points[0].location;
                 selectedState = selectedState === clickedState ? null : clickedState;
@@ -209,7 +232,7 @@ fetch('data.json')
             }
         });
 
-        document.getElementById('map').on('plotly_sliderchange', function(eventData) {
+        document.getElementById('choroplethMap').on('plotly_sliderchange', function (eventData) {
             if (eventData && eventData.slider && eventData.slider.active !== undefined) {
                 const activeIndex = eventData.slider.active;
                 currentYear = years[activeIndex];

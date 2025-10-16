@@ -11,17 +11,25 @@
 </head>
 
 <body>
-    <h2>How endangered is your child at school?</h2>
-    <h3>Number of public school students who brought firearms to or possessed firearms at school per 100,000 students enrolled</h3>
-    <div class="container">
-        <div id="map" style="width:100%; height:100vh;">
-            <script src="script.js"></script>
+    <div class="main">
+
+        <div class="title">
+            <h2>How endangered is your child at school?</h2>
+            <h3>Number of public school students who brought firearms to or possessed firearms at school per 100,000
+                students
+                enrolled</h3>
         </div>
-        <div id="lineGraphContainer" class="line-graph"> 
-            <div id="lineGraph"></div>
+        <div class="container">
+            <div id="choroplethMapContainer" class="line-graph">
+                <div id="choroplethMap"></div>
+                <script src="script.js"></script>
+            </div>
+            <div id="lineGraphContainer" class="line-graph">
+                <div id="lineGraph"></div>
+            </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>
