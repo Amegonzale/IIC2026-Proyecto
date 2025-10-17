@@ -32,7 +32,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             if (currentYear && year === currentYear) {
                 return isSelected ? 15 : 10;
             }
-            return isSelected ? 6 : 3;
+            return isSelected ? 4 : 2;
         });
 
         const trace = {
@@ -42,18 +42,18 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             mode: 'lines+markers',
             name: state,
             line: {
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'rgba(113, 175, 255, 1)'), // No me gusta el color default ;;
-                width: isSelected ? 6 : 3 // Al seleccionarlo se pone mas waton
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'), // No me gusta el color default ;;
+                width: isSelected ? 4 : 2 // Al seleccionarlo se pone mas waton
             },
             marker: {
                 size: markerSizes,
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'rgba(113, 175, 255, 1)'),
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'),
                 line: {
                     width: currentYear ? years.map(y => y === currentYear ? 2 : 0) : 0,
                     color: 'white'
                 }
             },
-            opacity: selectedState && !isSelected ? 0.3 : 1,
+            opacity: selectedState && !isSelected ? 0.3 : 0.9,
             showlegend: false
         };
 
@@ -66,22 +66,27 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
     const layout = {
         title: {
             text: selectedState ? `${data[years[0]][selectedState].stateName} Timeline` : 'All States Timeline',
-            font: { size: 14 }
+            font: { size: 8 }
         },
         xaxis: {
             title: 'Year',
-            tickangle: -45,
+            tickangle: 0,
             showgrid: false,
-            zeroline: false
+            zeroline: false,
+
         },
         yaxis: {
             title: 'Rate per 100,000 students',
-            showgrid: false,
-            zeroline: false
+            showgrid: true,
+            zeroline: false,
+            side: 'right'
+
         },
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
-        margin: { l: 50, r: 20, t: 50, b: 50 },
+        margin: { l: 20, r: 40, t: 100, b: 40 },
+        height: 350,
+        width: 670
     };
 
     const config = {
@@ -111,9 +116,9 @@ fetch('data.json')
         const zmaxGlobal = Math.max(...allValues);
 
         const color = [
-            [0, 'rgba(255, 200, 200, 1)'], [0.2, 'rgba(255, 161, 161, 1)'],
-            [0.4, 'rgba(255, 125, 125, 1)'], [0.6, 'rgba(255, 86, 86, 1)'],
-            [0.8, 'rgba(253, 55, 55, 1)'], [1, 'rgba(255, 21, 21, 1)']
+            [0, 'rgba(255, 200, 200, 1)'], [0.2, 'rgba(251, 127, 127, 1)'],
+            [0.4, 'rgba(253, 80, 80, 1)'], [0.6, 'rgba(249, 21, 21, 1)'],
+            [0.8, 'rgba(186, 0, 0, 1)'], [1, 'rgba(133, 0, 0, 1)']
         ];
 
         const years = Object.keys(data).sort();
@@ -138,7 +143,7 @@ fetch('data.json')
                     colorscale: color,
                     colorbar: {
                         title: "Valor",
-                        x: -0.1,
+                        x: -0.05,
                         xanchor: 'left',
                         thickness: 8,
                         len: 0.85,
@@ -165,7 +170,7 @@ fetch('data.json')
             colorscale: color,
             colorbar: {
                 title: "Valor",
-                x: -0.1,
+                x: -0.05,
                 xanchor: 'left',
                 thickness: 8,
                 len: 0.85,
@@ -211,14 +216,14 @@ fetch('data.json')
                 }
             ],
             margin: {
-                l: 0,
+                l: 50,
                 r: 0,
                 b: 0,
                 t: 0,
-                pad: 2
+                pad: 0
             },
-            width: 780,
-            height: 500,
+            height: 520,
+            width: 780
         };
 
         Plotly.newPlot("choroplethMap", dataInit, layout, {

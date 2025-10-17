@@ -5,10 +5,14 @@ h3 {
 
 h2 {
     font-size: xx-large;
+    color: #000000;
+    margin-bottom: 3px;
+    margin-top: 10px;
 }
 
 h3 {
     font-size: medium;
+    color: #980a0a;
 }
 
 .title {
@@ -28,6 +32,7 @@ h3 {
 
 body {
     margin: 0;
+    background-color: #e0e0e1;
 }
 
 .main {
@@ -37,21 +42,57 @@ body {
 }
 
 .container {
-    margin-top: 2%;
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-right: 1%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
     height: 100%;
     grid-template-rows: 1fr auto;
+    column-gap: 5px;
 }
 
 div#choroplethMap {
     margin: 0px;
-    width: 100%;
     height: auto;
-    min-width: 800px;
-
+    /* min-width: 800px; */
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 100%;
 }
+
+div#choroplethMap {
+    width: min-content;
+}
+
+div#lineGraph {
+    background-color: white;
+    height: auto;
+    /* max-width: 95%;
+    width: 95%; */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+div#rightSide {
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    background-color: #c33030;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+div#info {
+    background-color: #c33030;
+    flex: 1;
+    border-radius: 20px;
+    padding: 2%;
+}
+
 
 
 div.plot-container.plotly {
@@ -103,8 +144,21 @@ div#lineGraphContainer {
     display: flex;
     height: 100%;
     align-items: center;
+}
+
+div#lineGraphContainer {
+    justify-content: start;
+    overflow: hidden;
+    flex-direction: column;
     justify-content: center;
 }
+
+div#choroplethMapContainer {
+    justify-content: center;
+
+}
+
+
 
 /* #lineGraph {
     margin: auto;
@@ -113,5 +167,5 @@ div#lineGraphContainer {
 
 
 g.slider-group {
-    transform: translateX(50px) translateY(430px);
+    transform: translateX(45px) translateY(440px);
 }
