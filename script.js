@@ -86,7 +86,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         paper_bgcolor: 'rgba(0,0,0,0)',
         margin: { l: 20, r: 40, t: 100, b: 40 },
         height: 350,
-        width: 670
+        width: 600
     };
 
     const config = {
@@ -97,11 +97,11 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
     Plotly.newPlot("lineGraph", traces, layout, config);
 
     // Click event desde el el grafico :3
-    //document.getElementById('lineGraph').on('plotly_click', function(eventData) {
-    //    const clickedState = eventData.points[0].data.name;
-    //    selectedState = selectedState === clickedState ? null : clickedState;
-    //    createLineGraph(allStatesData, selectedState, currentYear);
-    //});
+    document.getElementById('lineGraph').on('plotly_click', function (eventData) {
+        const clickedState = eventData.points[0].data.name;
+        selectedState = selectedState === clickedState ? null : clickedState;
+        createLineGraph(allStatesData, selectedState, currentYear);
+    });
 }
 
 // Cargar datos y actualizar variables globales
@@ -223,7 +223,7 @@ fetch('data.json')
                 pad: 0
             },
             height: 520,
-            width: 780
+            width: 850
         };
 
         Plotly.newPlot("choroplethMap", dataInit, layout, {

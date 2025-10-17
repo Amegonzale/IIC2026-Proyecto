@@ -71,7 +71,10 @@ div#lineGraph {
     height: auto;
     /* max-width: 95%;
     width: 95%; */
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     overflow: hidden;
 }
 
