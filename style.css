@@ -1,3 +1,23 @@
+h2,
+h3 {
+    margin: 0;
+}
+
+h2 {
+    font-size: xx-large;
+}
+
+h3 {
+    font-size: medium;
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+}
+
 #graph {
     background: #ebe9ed;
 
@@ -6,14 +26,37 @@
     flex-direction: column;
 }
 
+body {
+    margin: 0;
+}
+
+.main {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    height: 100%;
+    grid-template-rows: 1fr auto;
+}
+
+div#choroplethMap {
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    min-width: 800px;
+
+}
+
+
 div.plot-container.plotly {
     width: auto !important;
     margin: auto !important;
-}
-
-div#top10.js-plotly-plot {
-    width: 100% !important;
-    display: flex;
 }
 
 /* tspan {
@@ -28,30 +71,13 @@ text.gtitle {
 }
 
 
-div#top10 text.gtitle {
-
-    font-size: 1.2em !important;
-
-}
-
-div#top10 {
-    margin-top: -20px;
-}
-
-div#top10 text.ytitle {
-
-    font-size: 0.8em !important;
-
-
-}
-
-g.geolayer {
+/* g.geolayer {
     transform: translateY(10px);
 }
 
 g.g-ytitle {
     transform: translateY(-10px) translateX(-8px);
-}
+} */
 
 text.hycb901233title {
 
@@ -63,4 +89,29 @@ text.hycb901233title {
 g.cbtitle text {
     font-size: 0.8em !important;
     transform: rotate(-90deg) translateY(-180px) translateX(-390px);
+}
+
+/* .line-graph-container {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
+} */
+
+div#choroplethMapContainer,
+div#lineGraphContainer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* #lineGraph {
+    margin: auto;
+    padding-top: 15%;
+} */
+
+
+g.slider-group {
+    transform: translateX(50px) translateY(430px);
 }

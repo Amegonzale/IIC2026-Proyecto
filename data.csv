@@ -1,0 +1,551 @@
+,State,Year,Abbreviation,Value
+0,Alabama,2011,AL,1.6
+1,Alabama,2012,AL,12.2
+2,Alabama,2013,AL,13.0
+3,Alabama,2014,AL,9.0
+4,Alabama,2015,AL,13.4
+5,Alabama,2016,AL,9.4
+6,Alabama,2017,AL,5.4
+7,Alabama,2018,AL,5.4
+8,Alabama,2019,AL,2.3
+9,Alabama,2020,AL,2.2
+10,Alabama,2021,AL,30.3
+11,Alaska,2011,AK,4.6
+12,Alaska,2012,AK,3.8
+13,Alaska,2013,AK,3.1
+14,Alaska,2014,AK,3.0
+15,Alaska,2015,AK,5.3
+16,Alaska,2016,AK,5.3
+17,Alaska,2017,AK,7.5
+18,Alaska,2018,AK,6.1
+19,Alaska,2019,AK,6.1
+20,Alaska,2020,AK,1.5
+21,Alaska,2021,AK,6.9
+22,Arizona,2011,AZ,4.0
+23,Arizona,2012,AZ,3.6
+24,Arizona,2013,AZ,3.1
+25,Arizona,2014,AZ,3.2
+26,Arizona,2015,AZ,2.6
+27,Arizona,2016,AZ,7.0
+28,Arizona,2017,AZ,3.7
+29,Arizona,2018,AZ,2.4
+30,Arizona,2019,AZ,0.9
+31,Arizona,2020,AZ,0.9
+32,Arizona,2021,AZ,2.6
+33,Arkansas,2011,AR,21.7
+34,Arkansas,2012,AR,23.7
+35,Arkansas,2013,AR,23.1
+36,Arkansas,2014,AR,25.1
+37,Arkansas,2015,AR,22.8
+38,Arkansas,2016,AR,28.8
+39,Arkansas,2017,AR,29.8
+40,Arkansas,2018,AR,25.4
+41,Arkansas,2019,AR,13.9
+42,Arkansas,2020,AR,9.7
+43,Arkansas,2021,AR,19.6
+44,California,2011,CA,2.5
+45,California,2012,CA,5.1
+46,California,2013,CA,5.0
+47,California,2014,CA,5.1
+48,California,2015,CA,6.0
+49,California,2016,CA,5.5
+50,California,2017,CA,6.0
+51,California,2018,CA,4.9
+52,California,2019,CA,4.2
+53,California,2020,CA,0.7
+54,California,2021,CA,10.0
+55,Colorado,2011,CO,7.8
+56,Colorado,2012,CO,4.9
+57,Colorado,2013,CO,5.1
+58,Colorado,2014,CO,2.5
+59,Colorado,2015,CO,3.0
+60,Colorado,2016,CO,3.3
+61,Colorado,2017,CO,5.3
+62,Colorado,2018,CO,5.6
+63,Colorado,2019,CO,5.0
+64,Colorado,2020,CO,2.6
+65,Colorado,2021,CO,10.9
+66,Connecticut,2011,CT,7.6
+67,Connecticut,2012,CT,8.2
+68,Connecticut,2013,CT,4.4
+69,Connecticut,2014,CT,6.6
+70,Connecticut,2015,CT,7.6
+71,Connecticut,2016,CT,7.5
+72,Connecticut,2017,CT,4.1
+73,Connecticut,2018,CT,4.4
+74,Connecticut,2019,CT,3.1
+75,Connecticut,2020,CT,3.5
+76,Connecticut,2021,CT,6.9
+77,Delaware,2011,DE,1.6
+78,Delaware,2012,DE,2.3
+79,Delaware,2013,DE,5.3
+80,Delaware,2014,DE,2.2
+81,Delaware,2015,DE,5.2
+82,Delaware,2016,DE,2.2
+83,Delaware,2017,DE,4.4
+84,Delaware,2018,DE,5.8
+85,Delaware,2019,DE,5.0
+86,Delaware,2020,DE,0.7
+87,Delaware,2021,DE,5.0
+88,Florida,2011,FL,3.9
+89,Florida,2012,FL,3.6
+90,Florida,2013,FL,4.4
+91,Florida,2014,FL,4.9
+92,Florida,2015,FL,5.2
+93,Florida,2016,FL,4.7
+94,Florida,2017,FL,6.1
+95,Florida,2018,FL,6.4
+96,Florida,2019,FL,6.6
+97,Florida,2020,FL,3.5
+98,Florida,2021,FL,9.0
+99,Georgia,2011,GA,8.4
+100,Georgia,2012,GA,10.5
+101,Georgia,2013,GA,7.8
+102,Georgia,2014,GA,7.0
+103,Georgia,2015,GA,10.5
+104,Georgia,2016,GA,11.6
+105,Georgia,2017,GA,11.5
+106,Georgia,2018,GA,9.4
+107,Georgia,2019,GA,7.7
+108,Georgia,2020,GA,3.8
+109,Georgia,2021,GA,16.7
+110,Hawaii,2011,HI,0.5
+111,Hawaii,2012,HI,0.5
+112,Hawaii,2013,HI,0.0
+113,Hawaii,2014,HI,0.0
+114,Hawaii,2015,HI,18.7
+115,Hawaii,2016,HI,13.8
+116,Hawaii,2017,HI,14.4
+117,Hawaii,2018,HI,11.6
+118,Hawaii,2019,HI,9.4
+119,Hawaii,2020,HI,0.0
+120,Hawaii,2021,HI,2.3
+121,Idaho,2011,ID,6.1
+122,Idaho,2012,ID,1.8
+123,Idaho,2013,ID,2.4
+124,Idaho,2014,ID,2.1
+125,Idaho,2015,ID,3.1
+126,Idaho,2016,ID,2.7
+127,Idaho,2017,ID,2.3
+128,Idaho,2018,ID,0.6
+129,Idaho,2019,ID,1.6
+130,Idaho,2020,ID,2.3
+131,Idaho,2021,ID,2.5
+132,Illinois,2011,IL,0.3
+133,Illinois,2012,IL,0.2
+134,Illinois,2013,IL,0.2
+135,Illinois,2014,IL,9.0
+136,Illinois,2015,IL,8.7
+137,Illinois,2016,IL,9.3
+138,Illinois,2017,IL,9.5
+139,Illinois,2018,IL,0.0
+140,Illinois,2019,IL,0.0
+141,Illinois,2020,IL,2.2
+142,Illinois,2021,IL,29.2
+143,Indiana,2011,IN,4.6
+144,Indiana,2012,IN,4.7
+145,Indiana,2013,IN,4.9
+146,Indiana,2014,IN,5.4
+147,Indiana,2015,IN,7.7
+148,Indiana,2016,IN,6.4
+149,Indiana,2017,IN,7.0
+150,Indiana,2018,IN,6.8
+151,Indiana,2019,IN,5.4
+152,Indiana,2020,IN,3.1
+153,Indiana,2021,IN,9.6
+154,Iowa,2011,IA,0.6
+155,Iowa,2012,IA,0.8
+156,Iowa,2013,IA,0.6
+157,Iowa,2014,IA,0.6
+158,Iowa,2015,IA,0.2
+159,Iowa,2016,IA,7.1
+160,Iowa,2017,IA,7.4
+161,Iowa,2018,IA,11.3
+162,Iowa,2019,IA,3.7
+163,Iowa,2020,IA,5.1
+164,Iowa,2021,IA,12.3
+165,Kansas,2011,KS,6.2
+166,Kansas,2012,KS,9.8
+167,Kansas,2013,KS,8.1
+168,Kansas,2014,KS,7.0
+169,Kansas,2015,KS,7.1
+170,Kansas,2016,KS,10.3
+171,Kansas,2017,KS,8.4
+172,Kansas,2018,KS,10.0
+173,Kansas,2019,KS,5.4
+174,Kansas,2020,KS,4.4
+175,Kansas,2021,KS,9.3
+176,Kentucky,2011,KY,3.4
+177,Kentucky,2012,KY,5.3
+178,Kentucky,2013,KY,6.6
+179,Kentucky,2014,KY,7.3
+180,Kentucky,2015,KY,7.6
+181,Kentucky,2016,KY,8.5
+182,Kentucky,2017,KY,6.6
+183,Kentucky,2018,KY,5.0
+184,Kentucky,2019,KY,6.4
+185,Kentucky,2020,KY,1.8
+186,Kentucky,2021,KY,7.9
+187,Louisiana,2011,LA,23.0
+188,Louisiana,2012,LA,27.3
+189,Louisiana,2013,LA,30.1
+190,Louisiana,2014,LA,19.9
+191,Louisiana,2015,LA,24.8
+192,Louisiana,2016,LA,23.7
+193,Louisiana,2017,LA,25.0
+194,Louisiana,2018,LA,20.8
+195,Louisiana,2019,LA,20.8
+196,Louisiana,2020,LA,11.4
+197,Louisiana,2021,LA,21.4
+198,Maine,2011,ME,2.1
+199,Maine,2012,ME,1.1
+200,Maine,2013,ME,0.0
+201,Maine,2014,ME,0.5
+202,Maine,2015,ME,0.0
+203,Maine,2016,ME,1.7
+204,Maine,2017,ME,3.3
+205,Maine,2018,ME,4.4
+206,Maine,2019,ME,1.1
+207,Maine,2020,ME,2.3
+208,Maine,2021,ME,4.6
+209,Montana,2011,MT,22.5
+210,Montana,2012,MT,10.5
+211,Montana,2013,MT,11.1
+212,Montana,2014,MT,9.0
+213,Montana,2015,MT,11.0
+214,Montana,2016,MT,6.1
+215,Montana,2017,MT,8.0
+216,Montana,2018,MT,6.0
+217,Montana,2019,MT,5.3
+218,Montana,2020,MT,11.6
+219,Montana,2021,MT,15.3
+220,Nebraska,2011,NE,3.7
+221,Nebraska,2012,NE,5.6
+222,Nebraska,2013,NE,5.2
+223,Nebraska,2014,NE,5.4
+224,Nebraska,2015,NE,3.2
+225,Nebraska,2016,NE,3.8
+226,Nebraska,2017,NE,5.9
+227,Nebraska,2018,NE,7.0
+228,Nebraska,2019,NE,3.6
+229,Nebraska,2020,NE,2.8
+230,Nebraska,2021,NE,5.2
+231,Nevada,2011,NV,5.2
+232,Nevada,2012,NV,5.6
+233,Nevada,2013,NV,5.8
+234,Nevada,2014,NV,2.6
+235,Nevada,2015,NV,1.9
+236,Nevada,2016,NV,5.9
+237,Nevada,2017,NV,5.8
+238,Nevada,2018,NV,5.7
+239,Nevada,2019,NV,6.2
+240,Nevada,2020,NV,2.7
+241,Nevada,2021,NV,10.7
+242,New Hampshire,2011,NH,9.9
+243,New Hampshire,2012,NH,9.0
+244,New Hampshire,2013,NH,11.8
+245,New Hampshire,2014,NH,7.0
+246,New Hampshire,2015,NH,4.9
+247,New Hampshire,2016,NH,4.4
+248,New Hampshire,2017,NH,8.9
+249,New Hampshire,2018,NH,2.8
+250,New Hampshire,2019,NH,4.5
+251,New Hampshire,2020,NH,7.1
+252,New Hampshire,2021,NH,4.7
+253,New Jersey,2011,NJ,0.4
+254,New Jersey,2012,NJ,0.7
+255,New Jersey,2013,NJ,0.4
+256,New Jersey,2014,NJ,0.5
+257,New Jersey,2015,NJ,0.2
+258,New Jersey,2016,NJ,0.5
+259,New Jersey,2017,NJ,0.6
+260,New Jersey,2018,NJ,0.4
+261,New Jersey,2019,NJ,0.4
+262,New Jersey,2020,NJ,0.1
+263,New Jersey,2021,NJ,1.0
+264,New Mexico,2011,NM,15.7
+265,New Mexico,2012,NM,15.4
+266,New Mexico,2013,NM,17.4
+267,New Mexico,2014,NM,7.3
+268,New Mexico,2015,NM,23.2
+269,New Mexico,2016,NM,20.8
+270,New Mexico,2017,NM,17.3
+271,New Mexico,2018,NM,11.7
+272,New Mexico,2019,NM,13.6
+273,New Mexico,2020,NM,1.6
+274,New Mexico,2021,NM,24.3
+275,New York,2011,NY,9.4
+276,New York,2012,NY,6.6
+277,New York,2013,NY,8.7
+278,New York,2014,NY,9.0
+279,New York,2015,NY,6.8
+280,New York,2016,NY,5.0
+281,New York,2017,NY,10.2
+282,New York,2018,NY,9.8
+283,New York,2019,NY,4.4
+284,New York,2020,NY,2.0
+285,New York,2021,NY,7.5
+286,North Carolina,2011,NC,4.4
+287,North Carolina,2012,NC,4.9
+288,North Carolina,2013,NC,6.4
+289,North Carolina,2014,NC,5.4
+290,North Carolina,2015,NC,7.4
+291,North Carolina,2016,NC,6.5
+292,North Carolina,2017,NC,8.0
+293,North Carolina,2018,NC,7.5
+294,North Carolina,2019,NC,5.6
+295,North Carolina,2020,NC,1.7
+296,North Carolina,2021,NC,10.5
+297,North Dakota,2011,ND,14.3
+298,North Dakota,2012,ND,7.9
+299,North Dakota,2013,ND,14.4
+300,North Dakota,2014,ND,3.8
+301,North Dakota,2015,ND,10.1
+302,North Dakota,2016,ND,3.6
+303,North Dakota,2017,ND,16.1
+304,North Dakota,2018,ND,7.9
+305,North Dakota,2019,ND,3.4
+306,North Dakota,2020,ND,4.3
+307,North Dakota,2021,ND,2.6
+308,Ohio,2011,OH,4.3
+309,Ohio,2012,OH,4.1
+310,Ohio,2013,OH,5.9
+311,Ohio,2014,OH,5.1
+312,Ohio,2015,OH,4.8
+313,Ohio,2016,OH,4.7
+314,Ohio,2017,OH,4.1
+315,Ohio,2018,OH,3.4
+316,Ohio,2019,OH,2.3
+317,Ohio,2020,OH,1.5
+318,Ohio,2021,OH,5.5
+319,Oklahoma,2011,OK,3.8
+320,Oklahoma,2012,OK,4.8
+321,Oklahoma,2013,OK,3.4
+322,Oklahoma,2014,OK,4.2
+323,Oklahoma,2015,OK,5.5
+324,Oklahoma,2016,OK,4.2
+325,Oklahoma,2017,OK,5.9
+326,Oklahoma,2018,OK,4.7
+327,Oklahoma,2019,OK,4.7
+328,Oklahoma,2020,OK,2.9
+329,Oklahoma,2021,OK,5.0
+330,Oregon,2011,OR,10.4
+331,Oregon,2012,OR,8.0
+332,Oregon,2013,OR,6.2
+333,Oregon,2014,OR,7.0
+334,Oregon,2015,OR,4.9
+335,Oregon,2016,OR,6.3
+336,Oregon,2017,OR,8.4
+337,Oregon,2018,OR,7.1
+338,Oregon,2019,OR,3.6
+339,Oregon,2020,OR,1.9
+340,Oregon,2021,OR,13.9
+341,Maryland,2011,MD,1.4
+342,Maryland,2012,MD,1.3
+343,Maryland,2013,MD,0.8
+344,Maryland,2014,MD,0.9
+345,Maryland,2015,MD,1.0
+346,Maryland,2016,MD,1.6
+347,Maryland,2017,MD,1.7
+348,Maryland,2018,MD,1.3
+349,Maryland,2019,MD,1.4
+350,Maryland,2020,MD,0.3
+351,Maryland,2021,MD,3.7
+352,Massachusetts,2011,MA,7.0
+353,Massachusetts,2012,MA,11.3
+354,Massachusetts,2013,MA,9.5
+355,Massachusetts,2014,MA,10.0
+356,Massachusetts,2015,MA,6.2
+357,Massachusetts,2016,MA,2.6
+358,Massachusetts,2017,MA,2.3
+359,Massachusetts,2018,MA,2.6
+360,Massachusetts,2019,MA,0.8
+361,Massachusetts,2020,MA,1.0
+362,Massachusetts,2021,MA,2.8
+363,Michigan,2011,MI,7.0
+364,Michigan,2012,MI,7.3
+365,Michigan,2013,MI,4.5
+366,Michigan,2014,MI,3.3
+367,Michigan,2015,MI,3.8
+368,Michigan,2016,MI,2.9
+369,Michigan,2017,MI,8.8
+370,Michigan,2018,MI,5.7
+371,Michigan,2019,MI,4.3
+372,Michigan,2020,MI,3.2
+373,Michigan,2021,MI,10.8
+374,Minnesota,2011,MN,1.7
+375,Minnesota,2012,MN,2.5
+376,Minnesota,2013,MN,3.8
+377,Minnesota,2014,MN,3.0
+378,Minnesota,2015,MN,3.5
+379,Minnesota,2016,MN,3.2
+380,Minnesota,2017,MN,3.7
+381,Minnesota,2018,MN,2.0
+382,Minnesota,2019,MN,2.4
+383,Minnesota,2020,MN,1.3
+384,Minnesota,2021,MN,8.0
+385,Mississippi,2011,MS,6.5
+386,Mississippi,2012,MS,7.9
+387,Mississippi,2013,MS,9.9
+388,Mississippi,2014,MS,3.7
+389,Mississippi,2015,MS,4.9
+390,Mississippi,2016,MS,7.9
+391,Mississippi,2017,MS,3.8
+392,Mississippi,2018,MS,1.9
+393,Mississippi,2019,MS,3.0
+394,Mississippi,2020,MS,4.1
+395,Mississippi,2021,MS,8.4
+396,Missouri,2011,MO,0.4
+397,Missouri,2012,MO,0.9
+398,Missouri,2013,MO,0.5
+399,Missouri,2014,MO,1.0
+400,Missouri,2015,MO,0.9
+401,Missouri,2016,MO,1.0
+402,Missouri,2017,MO,1.0
+403,Missouri,2018,MO,0.4
+404,Missouri,2019,MO,0.3
+405,Missouri,2020,MO,0.1
+406,Missouri,2021,MO,1.2
+407,Pennsylvania,2011,PA,1.2
+408,Pennsylvania,2012,PA,1.9
+409,Pennsylvania,2013,PA,1.4
+410,Pennsylvania,2014,PA,2.6
+411,Pennsylvania,2015,PA,1.0
+412,Pennsylvania,2016,PA,1.4
+413,Pennsylvania,2017,PA,1.6
+414,Pennsylvania,2018,PA,1.3
+415,Pennsylvania,2019,PA,1.0
+416,Pennsylvania,2020,PA,0.7
+417,Pennsylvania,2021,PA,2.4
+418,Rhode Island,2011,RI,1.4
+419,Rhode Island,2012,RI,0.0
+420,Rhode Island,2013,RI,1.4
+421,Rhode Island,2014,RI,0.0
+422,Rhode Island,2015,RI,3.5
+423,Rhode Island,2016,RI,6.3
+424,Rhode Island,2017,RI,0.0
+425,Rhode Island,2018,RI,3.5
+426,Rhode Island,2019,RI,0.7
+427,Rhode Island,2020,RI,0.7
+428,Rhode Island,2021,RI,2.9
+429,South Carolina,2011,SC,5.2
+430,South Carolina,2012,SC,10.1
+431,South Carolina,2013,SC,14.5
+432,South Carolina,2014,SC,10.0
+433,South Carolina,2015,SC,11.9
+434,South Carolina,2016,SC,13.2
+435,South Carolina,2017,SC,15.0
+436,South Carolina,2018,SC,11.5
+437,South Carolina,2019,SC,6.1
+438,South Carolina,2020,SC,6.3
+439,South Carolina,2021,SC,23.2
+440,South Dakota,2011,SD,7.8
+441,South Dakota,2012,SD,10.0
+442,South Dakota,2013,SD,3.8
+443,South Dakota,2014,SD,0.8
+444,South Dakota,2015,SD,7.4
+445,South Dakota,2016,SD,6.6
+446,South Dakota,2017,SD,11.6
+447,South Dakota,2018,SD,7.2
+448,South Dakota,2019,SD,2.9
+449,South Dakota,2020,SD,4.3
+450,South Dakota,2021,SD,7.1
+451,Tennessee,2011,TN,7.5
+452,Tennessee,2012,TN,6.4
+453,Tennessee,2013,TN,5.7
+454,Tennessee,2014,TN,5.7
+455,Tennessee,2015,TN,12.1
+456,Tennessee,2016,TN,12.7
+457,Tennessee,2017,TN,12.8
+458,Tennessee,2018,TN,9.8
+459,Tennessee,2019,TN,8.5
+460,Tennessee,2020,TN,4.7
+461,Tennessee,2021,TN,17.8
+462,Texas,2011,TX,7.9
+463,Texas,2012,TX,7.8
+464,Texas,2013,TX,1.8
+465,Texas,2014,TX,2.0
+466,Texas,2015,TX,2.0
+467,Texas,2016,TX,2.7
+468,Texas,2017,TX,3.6
+469,Texas,2018,TX,3.3
+470,Texas,2019,TX,2.7
+471,Texas,2020,TX,2.0
+472,Texas,2021,TX,6.2
+473,Utah,2011,UT,0.0
+474,Utah,2012,UT,0.0
+475,Utah,2013,UT,16.1
+476,Utah,2014,UT,0.0
+477,Utah,2015,UT,0.0
+478,Utah,2016,UT,0.0
+479,Utah,2017,UT,7.0
+480,Utah,2018,UT,17.3
+481,Utah,2019,UT,9.6
+482,Utah,2020,UT,2.4
+483,Utah,2021,UT,12.9
+484,Vermont,2011,VT,4.4
+485,Vermont,2012,VT,3.3
+486,Vermont,2013,VT,12.4
+487,Vermont,2014,VT,4.6
+488,Vermont,2015,VT,5.7
+489,Vermont,2016,VT,5.7
+490,Vermont,2017,VT,5.7
+491,Vermont,2018,VT,1.1
+492,Vermont,2019,VT,3.5
+493,Vermont,2020,VT,2.4
+494,Vermont,2021,VT,8.3
+495,Virginia,2011,VA,4.1
+496,Virginia,2012,VA,4.0
+497,Virginia,2013,VA,3.5
+498,Virginia,2014,VA,4.2
+499,Virginia,2015,VA,4.1
+500,Virginia,2016,VA,5.1
+501,Virginia,2017,VA,5.7
+502,Virginia,2018,VA,4.0
+503,Virginia,2019,VA,4.4
+504,Virginia,2020,VA,1.0
+505,Virginia,2021,VA,11.1
+506,Washington,2011,WA,12.1
+507,Washington,2012,WA,9.5
+508,Washington,2013,WA,8.6
+509,Washington,2014,WA,9.0
+510,Washington,2015,WA,3.9
+511,Washington,2016,WA,11.3
+512,Washington,2017,WA,14.0
+513,Washington,2018,WA,9.9
+514,Washington,2019,WA,7.9
+515,Washington,2020,WA,0.0
+516,Washington,2021,WA,14.5
+517,West Virginia,2011,WV,4.2
+518,West Virginia,2012,WV,0.4
+519,West Virginia,2013,WV,75.1
+520,West Virginia,2014,WV,78.5
+521,West Virginia,2015,WV,101.3
+522,West Virginia,2016,WV,83.6
+523,West Virginia,2017,WV,7.0
+524,West Virginia,2018,WV,4.9
+525,West Virginia,2019,WV,5.3
+526,West Virginia,2020,WV,0.4
+527,West Virginia,2021,WV,5.5
+528,Wisconsin,2011,WI,4.5
+529,Wisconsin,2012,WI,5.4
+530,Wisconsin,2013,WI,4.9
+531,Wisconsin,2014,WI,7.2
+532,Wisconsin,2015,WI,5.9
+533,Wisconsin,2016,WI,6.6
+534,Wisconsin,2017,WI,6.4
+535,Wisconsin,2018,WI,4.8
+536,Wisconsin,2019,WI,3.0
+537,Wisconsin,2020,WI,2.4
+538,Wisconsin,2021,WI,5.5
+539,Wyoming,2011,WY,10.0
+540,Wyoming,2012,WY,24.0
+541,Wyoming,2013,WY,14.0
+542,Wyoming,2014,WY,13.8
+543,Wyoming,2015,WY,13.7
+544,Wyoming,2016,WY,24.4
+545,Wyoming,2017,WY,4.2
+546,Wyoming,2018,WY,7.4
+547,Wyoming,2019,WY,9.5
+548,Wyoming,2020,WY,11.9
+549,Wyoming,2021,WY,19.3
