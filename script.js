@@ -42,12 +42,12 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             mode: 'lines+markers',
             name: state,
             line: {
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'lightgray' : 'rgba(113, 175, 255, 1)'), // No me gusta el color default ;;
-                width: isSelected ? 3 : 1 // Al seleccionarlo se pone mas waton
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'rgba(113, 175, 255, 1)'), // No me gusta el color default ;;
+                width: isSelected ? 6 : 3 // Al seleccionarlo se pone mas waton
             },
             marker: {
                 size: markerSizes,
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'lightgray' : 'rgba(113, 175, 255, 1)'),
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'rgba(113, 175, 255, 1)'),
                 line: {
                     width: currentYear ? years.map(y => y === currentYear ? 2 : 0) : 0,
                     color: 'white'
@@ -65,16 +65,22 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
     const layout = {
         title: {
-            text: selectedState ? `${data[years[0]][selectedState].stateName} Timeline` : 'All States Timeline', // Sujeto a cambios :p
+            text: selectedState ? `${data[years[0]][selectedState].stateName} Timeline` : 'All States Timeline',
             font: { size: 14 }
         },
         xaxis: {
             title: 'Year',
-            tickangle: -45
+            tickangle: -45,
+            showgrid: false,
+            zeroline: false
         },
         yaxis: {
-            title: 'Rate per 100,000 students'
+            title: 'Rate per 100,000 students',
+            showgrid: false,
+            zeroline: false
         },
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        paper_bgcolor: 'rgba(0,0,0,0)',
         margin: { l: 50, r: 20, t: 50, b: 50 },
     };
 
