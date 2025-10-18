@@ -32,7 +32,7 @@ h3 {
 
 body {
     margin: 0;
-    background-color: #e0e0e1;
+    background-color: #ffffff;
 }
 
 .main {
@@ -42,7 +42,7 @@ body {
 }
 
 .container {
-    margin-top: 3%;
+    /* margin-top: 3%; */
     margin-left: 1%;
     margin-right: 1%;
     display: grid;
@@ -155,12 +155,13 @@ div#lineGraphContainer {
 div#lineGraphContainer {
     justify-content: start;
     overflow: hidden;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
 div#choroplethMapContainer {
     justify-content: center;
+    flex-direction: column;
 
 }
 
@@ -173,7 +174,11 @@ div#choroplethMapContainer {
 
 
 g.slider-group {
-    transform: translateX(45px) translateY(440px);
+    transform: translateX(45px) translateY(425px);
+}
+
+g.yaxislayer-above {
+    transform: translateX(25px) translateY(0px);
 }
 
 

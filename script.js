@@ -127,28 +127,29 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
     const layout = {
         title: {
-            text: selectedState ? `${data[years[0]][selectedState].stateName}` : 'All States',
-            font: { size: 8 }
+            // text: selectedState ? `${data[years[0]][selectedState].stateName}` : 'All States',
+            font: { size: 8 },
+            text: ''
         },
         xaxis: {
-            title: 'Year',
+            title: '',
             tickangle: 0,
             showgrid: false,
             zeroline: false,
+            color: 'white'
 
         },
         yaxis: {
-            title: 'Rate per 100,000 students',
+            title: '',
             showgrid: true,
             zeroline: false,
-            side: 'right'
-
+            side: 'left'
         },
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
-        margin: { l: 20, r: 40, t: 100, b: 40 },
-        height: 350,
-        width: 600
+        margin: { l: 7, r: 42, t: 0, b: 30 },
+        height: 210,
+        width: 850
     };
 
     const config = {
@@ -281,7 +282,7 @@ fetch('data.json')
                 l: 50,
                 r: 0,
                 b: 0,
-                t: 0,
+                t: 10,
                 pad: 0
             },
             height: 520,
