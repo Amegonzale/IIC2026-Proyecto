@@ -71,6 +71,7 @@ div#lineGraph {
     height: auto;
     /* max-width: 95%;
     width: 95%; */
+    width: min-content;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 0px;
@@ -87,6 +88,8 @@ div#rightSide {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
+    width: min-content;
+
 }
 
 div#info {
@@ -171,4 +174,25 @@ div#choroplethMapContainer {
 
 g.slider-group {
     transform: translateX(45px) translateY(440px);
+}
+
+
+g.trace.scatter.traceSELECTED100>g.lines>path.js-line {
+    stroke: url(#verticalGradient100) !important;
+    outline: 2px solid white;
+}
+
+g.trace.scatter.traceSELECTED40>g.lines>path.js-line {
+    stroke: url(#verticalGradient40) !important;
+
+}
+
+g.trace.scatter.traceSELECTED20>g.lines>path.js-line {
+    stroke: url(#verticalGradient20) !important;
+
+}
+
+g.trace.scatter.traceSELECTED10>g.lines>path.js-line {
+    stroke: url(#verticalGradient10) !important;
+
 }
