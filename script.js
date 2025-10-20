@@ -65,8 +65,8 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
     const layout = {
         title: {
-            text: selectedState ? `${data[years[0]][selectedState].stateName} Timeline` : 'All States Timeline',
-            font: { size: 8 }
+            text: selectedState ? `${data[years[0]][selectedState].stateName}` : 'All States Timeline',
+            font: { family: 'sans-serif', size: 8 }
         },
         xaxis: {
             title: 'Year',
@@ -182,6 +182,7 @@ fetch('data.json')
 
         const layout = {
             // title: { text: 'How endangered is your child at school?<br><sup>Number of public school students who brought firearms to or possessed firearms at school per 100,000 students enrolled</sup>' },
+            font: { family: "sans-serif" },
             geo: {
                 scope: "usa"
             },
