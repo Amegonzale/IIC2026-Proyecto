@@ -23,7 +23,7 @@ h3 {
 }
 
 #graph {
-    background: #ebe9ed;
+    background: #fff;
 
     display: flex;
     margin: auto;
@@ -32,7 +32,7 @@ h3 {
 
 body {
     margin: 0;
-    background-color: #e0e0e1;
+    background-color: #fff;
 }
 
 .main {
