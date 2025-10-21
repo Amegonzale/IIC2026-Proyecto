@@ -8,6 +8,7 @@ let allStatesData = {};
 function createLineGraph(data, selectedState = null, currentYear = "2011") {
     const years = Object.keys(data).sort();
     const states = new Set();
+    const wstate = [];
 
     years.forEach(year => {
         Object.keys(data[year]).forEach(state => states.add(state));
@@ -25,14 +26,29 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             yValues.push(data[year][state].value * 2); // Per 50,000 students
         });
 
+        let yMax = Math.max(...yValues)
+
+        if (yMax >= 90) {
+            yMax = 100
+        }
+        else if (yMax >= 30) {
+            yMax = 40
+        }
+        else if (yMax >= 15) {
+            yMax = 20
+        }
+        else {
+            yMax = 10
+        }
+
         // Si fue seleccionado en el mapa o grafico
         const isSelected = selectedState === state;
 
         const markerSizes = years.map(year => {
             if (currentYear && year === currentYear) {
-                return isSelected ? 15 : 10;
+                return isSelected ? 10 : 5;
             }
-            return isSelected ? 4 : 2;
+            return isSelected ? 7 : 1;
         });
 
         const trace = {
@@ -43,23 +59,69 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             name: state,
             line: {
                 color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'), // No me gusta el color default ;;
-                width: isSelected ? 4 : 2 // Al seleccionarlo se pone mas waton
+                width: isSelected ? 4 : 1 // Al seleccionarlo se pone mas waton
             },
             marker: {
                 size: markerSizes,
                 color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'),
                 line: {
-                    width: currentYear ? years.map(y => y === currentYear ? 2 : 0) : 0,
+                    width: currentYear ? years.map(y => y === currentYear ? 1 : 1) : 0,
+                    color: isSelected ? 'black' : (selectedState ? 'gray' : 'gray'),
+                },
+                opacity: 1,
+            },
+            opacity: selectedState && !isSelected ? 0.3 : 1,
+            showlegend: false,
+            uid: isSelected ? 'SELECTED' + yMax : state,
+        };
+
+        if (isSelected) {
+            selectedTrace.push(trace);
+            wstate.push(state)
+
+        }
+        else traces.push(trace);
+    });
+
+    if (wstate.length > 0) {
+        const state = wstate[0]
+        const xValues = [];
+        const yValues = [];
+
+        years.forEach(year => {
+            xValues.push(year);
+            yValues.push(data[year][state].value);
+        });
+
+        const markerSizes = years.map(year => {
+            return 2;
+        });
+
+        const trace = {
+            x: xValues,
+            y: yValues,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: state,
+            line: {
+                color: 'black', // No me gusta el color default ;;
+                width: 6 // Al seleccionarlo se pone mas waton
+            },
+            marker: {
+                size: markerSizes,
+                color: 'white',
+                line: {
+                    width: 0,
                     color: 'white'
                 }
             },
-            opacity: selectedState && !isSelected ? 0.3 : 0.9,
-            showlegend: false
+            opacity: 1,
+            showlegend: false,
+            uid: 'SELECTED-OUTLINE',
         };
 
-        if (isSelected) selectedTrace.push(trace);
-        else traces.push(trace);
-    });
+        traces.push(trace)
+    }
 
     if (selectedTrace.length > 0) traces.push(...selectedTrace);
 
