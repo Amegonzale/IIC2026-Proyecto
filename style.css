@@ -23,7 +23,7 @@ h3 {
 }
 
 #graph {
-    background: #ebe9ed;
+    background: #fff;
 
     display: flex;
     margin: auto;
@@ -32,7 +32,7 @@ h3 {
 
 body {
     margin: 0;
-    background-color: #e0e0e1;
+    background-color: #fff;
 }
 
 .main {
@@ -83,7 +83,7 @@ div#rightSide {
     height: 520px;
     display: flex;
     flex-direction: column;
-    background-color: #c33030;
+    background-color: #b1b0b4;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 50px;
@@ -93,7 +93,7 @@ div#rightSide {
 }
 
 div#info {
-    background-color: #c33030;
+    background-color: #b1b0b4;
     flex: 1;
     border-radius: 20px;
     padding: 2%;

@@ -23,7 +23,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
         years.forEach(year => {
             xValues.push(year);
-            yValues.push(data[year][state].value);
+            yValues.push(data[year][state].value * 2); // Per 50,000 students
         });
 
         let yMax = Math.max(...yValues)
@@ -128,7 +128,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
     const layout = {
         title: {
             text: selectedState ? `${data[years[0]][selectedState].stateName}` : 'All States',
-            font: { size: 8 }
+            font: { family: 'sans-serif', size: 8 }
         },
         xaxis: {
             title: 'Year',
@@ -138,7 +138,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
         },
         yaxis: {
-            title: 'Rate per 100,000 students',
+            title: 'Rate per 50,000 students',
             showgrid: true,
             zeroline: false,
             side: 'right'
@@ -176,6 +176,7 @@ fetch('data.json')
             Object.values(yearData).map(d => d.value)
         );
         const zmaxGlobal = Math.max(...allValues);
+        const ZMAX = zmaxGlobal * 2;
 
         const color = [
             [0, 'rgba(255, 200, 200, 1)'], [0.2, 'rgba(251, 127, 127, 1)'],
@@ -191,7 +192,7 @@ fetch('data.json')
 
         years.forEach(year => {
             const states = Object.keys(data[year]);
-            const values = states.map(s => data[year][s].value);
+            const values = states.map(s => data[year][s].value * 2);
             const texts = states.map(s => data[year][s].info);
 
             frames.push({
@@ -212,7 +213,7 @@ fetch('data.json')
                         outlinewidth: 0
                     },
                     zmin: 0,
-                    zmax: zmaxGlobal
+                    zmax: ZMAX
                 }]
             });
             if (year === years[0]) {
@@ -239,11 +240,12 @@ fetch('data.json')
                 outlinewidth: 0
             },
             zmin: 0,
-            zmax: zmaxGlobal
+            zmax: ZMAX
         }];
 
         const layout = {
             // title: { text: 'How endangered is your child at school?<br><sup>Number of public school students who brought firearms to or possessed firearms at school per 100,000 students enrolled</sup>' },
+            font: { family: "sans-serif" },
             geo: {
                 scope: "usa"
             },
