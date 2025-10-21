@@ -51,7 +51,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             return 0;
         });
 
-        const grey = 'rgba(170, 170, 170, 1)';
+        const grey = 'rgba(159, 159, 159, 1)';
         //const grey = 'gray';
         const trace = {
             x: xValues,
