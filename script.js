@@ -1,8 +1,21 @@
 // Crear variables globales
 const global_data = "data.json";
+const shot = new Tone.Player("resources/single-shot.mp3").toDestination();
 let selectedState = null;
 let currentYear = null;
 let allStatesData = {};
+
+// Loop sonido
+const loop = new Tone.Loop(time => {
+    console.log(time);
+    shot.start(0);
+}, "1n").start(0);
+
+loop.playbackRate = 1;
+
+function timer() {
+    Tone.Transport.stop()
+}
 
 // Line graph ñom
 function createLineGraph(data, selectedState = null, currentYear = "2011") {
@@ -305,6 +318,13 @@ fetch('data.json')
                 const clickedState = eventData.points[0].location;
                 selectedState = selectedState === clickedState ? null : clickedState;
                 createLineGraph(allStatesData, selectedState, currentYear);
+                if (selectedState != null) {
+                    Tone.Transport.start();
+                    setTimeout(timer, 4000)
+                }
+                else {
+                    timer()
+                }
             }
         });
 
