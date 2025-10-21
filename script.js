@@ -48,7 +48,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             if (currentYear && year === currentYear) {
                 return isSelected ? 10 : 5;
             }
-            return isSelected ? 0 : 0;
+            return 0;
         });
 
         const trace = {
@@ -83,6 +83,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         else traces.push(trace);
     });
 
+
     if (wstate.length > 0) {
         const state = wstate[0]
         const xValues = [];
@@ -104,8 +105,8 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             mode: 'lines+markers',
             name: state,
             line: {
-                color: 'black', // No me gusta el color default ;;
-                width: 6 // Al seleccionarlo se pone mas waton
+                color: 'black', 
+                width: 6
             },
             marker: {
                 size: markerSizes,
@@ -123,7 +124,42 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         traces.push(trace)
     }
 
+    const avgxValues = [];
+    const avgyValues = [];
+
+    years.forEach(year => {
+            avgxValues.push(year);
+            const avgValue = Array.from(states).reduce((sum, state) => sum + data[year][state].value, 0) / states.size;
+            avgyValues.push(avgValue * 2);
+    });
+
+    const avgMarkerSizes = years.map(year => {
+        if (currentYear && year === currentYear) {
+            return 10;
+        }
+        return 0;
+    });
+
+    const avgTrace = {
+        x: avgxValues,
+        y: avgyValues,
+        type: 'scatter',
+        mode: 'lines+markers',
+        name: 'Average',
+        line: {
+            color: 'rgba(0, 0, 0, 1)',
+            width: 4,
+            dash: 'dashdot'
+        },
+        marker: {
+            size: avgMarkerSizes
+        },
+        showlegend: false // esconde la leyenda de la linea
+    };
+
+    traces.push(avgTrace);
     if (selectedTrace.length > 0) traces.push(...selectedTrace);
+    // else traces.push(avgTrace); // por si queremos mostrarlo solo cuando no hay seleccionado
 
     const layout = {
         title: {
@@ -288,7 +324,7 @@ fetch('data.json')
                 pad: 0
             },
             height: 520,
-            width: 850
+            width: 800
         };
 
         Plotly.newPlot("choroplethMap", dataInit, layout, {

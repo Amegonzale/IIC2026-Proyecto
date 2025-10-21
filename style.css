@@ -60,18 +60,16 @@ div#choroplethMap {
     border-radius: 20px;
     overflow: hidden;
     max-width: 100%;
-}
-
-div#choroplethMap {
-    width: min-content;
+   /* width: min-content; */
+   width: 100%;
 }
 
 div#lineGraph {
     background-color: white;
     height: auto;
     /* max-width: 95%;
-    width: 95%; */
-    width: min-content;
+    width: min-content; */
+    width: 100%;
     /* border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 0px;
@@ -88,7 +86,8 @@ div#rightSide {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    width: min-content;
+    width: 100%;
+    /* width: min-content; */
 
 }
 
@@ -163,7 +162,7 @@ div#lineGraphContainer {
 
 div#choroplethMapContainer {
     justify-content: center;
-
+    width: 100%;
 }
 
 
