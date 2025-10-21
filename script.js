@@ -46,7 +46,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
         const markerSizes = years.map(year => {
             if (currentYear && year === currentYear) {
-                return isSelected ? 10 : 5;
+                return isSelected ? 0 : 0; // 10 : 5 sin la linea
             }
             return 0;
         });
@@ -137,7 +137,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
     const avgMarkerSizes = years.map(year => {
         if (currentYear && year === currentYear) {
-            return 10;
+            return (selectedTrace.length > 0) ? 0 : 0; // 5 : 10 sin la linea
         }
         return 0;
     });
@@ -181,6 +181,17 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             side: 'right'
 
         },
+        shapes: currentYear ? [{
+            type: 'line',
+            xref: 'x',
+            x0: String(currentYear),
+            x1: String(currentYear),
+            yref: 'paper',
+            y0: 0,
+            y1: 1,
+            line: { color: 'rgba(0, 0, 0, 0.5)', width: 2, dash: 'solid' },
+            layer: 'above'
+        }] : [],
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         margin: { l: 20, r: 40, t: 100, b: 40 },
