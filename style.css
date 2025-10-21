@@ -72,10 +72,10 @@ div#lineGraph {
     /* max-width: 95%;
     width: 95%; */
     width: min-content;
-    border-top-left-radius: 20px;
+    /* border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     overflow: hidden;
 }
 
@@ -83,7 +83,7 @@ div#rightSide {
     height: 520px;
     display: flex;
     flex-direction: column;
-    background-color: #b1b0b4;
+    background-color: #ffffff;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 50px;
@@ -113,8 +113,10 @@ div.plot-container.plotly {
 text.gtitle {
 
     font-size: 1.5em !important;
-    fill: #10071d !important;
-
+    fill: #000000 !important;
+    font-family: sans-serif;
+    font-weight: bold !important;
+    font-size: 1.8em !important;
 }
 
 

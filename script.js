@@ -28,13 +28,13 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
         let yMax = Math.max(...yValues)
 
-        if (yMax >= 90) {
+        if (yMax >= 180) {
             yMax = 100
         }
         else if (yMax >= 30) {
             yMax = 40
         }
-        else if (yMax >= 15) {
+        else if (yMax >= 10) {
             yMax = 20
         }
         else {
@@ -48,7 +48,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             if (currentYear && year === currentYear) {
                 return isSelected ? 10 : 5;
             }
-            return isSelected ? 7 : 1;
+            return isSelected ? 0 : 0;
         });
 
         const trace = {
@@ -63,7 +63,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             },
             marker: {
                 size: markerSizes,
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'),
+                color: isSelected ? '#000000' : (selectedState ? 'gray' : 'gray'),
                 line: {
                     width: currentYear ? years.map(y => y === currentYear ? 1 : 1) : 0,
                     color: isSelected ? 'black' : (selectedState ? 'gray' : 'gray'),
@@ -90,7 +90,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
         years.forEach(year => {
             xValues.push(year);
-            yValues.push(data[year][state].value);
+            yValues.push(data[year][state].value * 2);
         });
 
         const markerSizes = years.map(year => {
@@ -210,7 +210,7 @@ fetch('data.json')
                         xanchor: 'left',
                         thickness: 8,
                         len: 0.85,
-                        outlinewidth: 0
+                        outlinewidth: 1
                     },
                     zmin: 0,
                     zmax: ZMAX
@@ -237,7 +237,8 @@ fetch('data.json')
                 xanchor: 'left',
                 thickness: 8,
                 len: 0.85,
-                outlinewidth: 0
+                outlinewidth: 1,
+
             },
             zmin: 0,
             zmax: ZMAX
