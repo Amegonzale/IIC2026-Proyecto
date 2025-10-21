@@ -51,6 +51,8 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             return 0;
         });
 
+        const grey = 'rgba(170, 170, 170, 1)';
+        //const grey = 'gray';
         const trace = {
             x: xValues,
             y: yValues,
@@ -58,15 +60,15 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             mode: 'lines+markers',
             name: state,
             line: {
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'), // No me gusta el color default ;;
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? grey : grey), // No me gusta el color default ;;
                 width: isSelected ? 4 : 1 // Al seleccionarlo se pone mas waton
             },
             marker: {
                 size: markerSizes,
-                color: isSelected ? '#000000' : (selectedState ? 'gray' : 'gray'),
+                color: isSelected ? '#000000' : (selectedState ? grey : grey),
                 line: {
                     width: currentYear ? years.map(y => y === currentYear ? 1 : 1) : 0,
-                    color: isSelected ? 'black' : (selectedState ? 'gray' : 'gray'),
+                    color: isSelected ? 'black' : (selectedState ? grey : grey),
                 },
                 opacity: 1,
             },
@@ -154,7 +156,6 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         marker: {
             size: avgMarkerSizes
         },
-        showlegend: false // esconde la leyenda de la linea
     };
 
     traces.push(avgTrace);
@@ -184,7 +185,15 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         paper_bgcolor: 'rgba(0,0,0,0)',
         margin: { l: 20, r: 40, t: 100, b: 40 },
         height: 350,
-        width: 600
+        width: 600,
+        legend: {
+            x: 0.90,
+            y: 1.13,
+            xanchor: 'left',
+            yanchor: 'top',
+            bgcolor: 'rgba(255,255,255,0.85)',
+            font: { size: 10 }
+        },
     };
 
     const config = {
