@@ -125,7 +125,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             mode: 'lines+markers',
             name: state,
             line: {
-                color: 'black', 
+                color: 'black',
                 width: 6
             },
             marker: {
@@ -148,9 +148,9 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
     const avgyValues = [];
 
     years.forEach(year => {
-            avgxValues.push(year);
-            const avgValue = Array.from(states).reduce((sum, state) => sum + data[year][state].value, 0) / states.size;
-            avgyValues.push(avgValue * 2);
+        avgxValues.push(year);
+        const avgValue = Array.from(states).reduce((sum, state) => sum + data[year][state].value, 0) / states.size;
+        avgyValues.push(avgValue * 2);
     });
 
     const avgMarkerSizes = years.map(year => {
@@ -168,7 +168,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         name: 'Average',
         line: {
             color: 'rgba(0, 0, 0, 1)',
-            width: 4,
+            width: 3,
             dash: 'dashdot'
         },
         marker: {
@@ -346,7 +346,7 @@ fetch('data.json')
                 {
                     source: "usmap.png",
                     x: 0.52,
-                    y: 0.46,
+                    y: 0.47,
                     sizex: 0.79,
                     sizey: 0.79,
                     xanchor: "center",
@@ -362,7 +362,8 @@ fetch('data.json')
                 pad: 0
             },
             height: 520,
-            width: 800
+            width: 800,
+            dragmode: false
         };
 
         Plotly.newPlot("choroplethMap", dataInit, layout, {
