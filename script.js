@@ -1,8 +1,23 @@
 // Crear variables globales
 const global_data = "data.json";
+const shot = new Tone.Player("resources/single-shot-2.mp3").toDestination();
 let selectedState = null;
 let currentYear = null;
 let allStatesData = {};
+let allStatesInfo = {};
+let playbackrate = 1;
+
+// Loop sonido
+const loop = new Tone.Loop(time => {
+    console.log(time);
+    shot.start(0);
+}, "1n").start(0);
+
+
+
+function timer() {
+    Tone.Transport.stop()
+}
 
 // Line graph ñom
 function createLineGraph(data, selectedState = null, currentYear = "2011") {
@@ -25,6 +40,9 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             xValues.push(year);
             yValues.push(data[year][state].value * 2); // Per 50,000 students
         });
+
+        allStatesInfo[state] = [Math.max(...yValues), data['2011'][state].info]
+
 
         let yMax = Math.max(...yValues)
 
@@ -361,6 +379,16 @@ fetch('data.json')
                 const clickedState = eventData.points[0].location;
                 selectedState = selectedState === clickedState ? null : clickedState;
                 createLineGraph(allStatesData, selectedState, currentYear);
+                if (selectedState != null) {
+                    let max = Math.min(allStatesInfo[selectedState][0] / 10, 15)
+                    loop.playbackRate = max
+                    console.log(max)
+                    Tone.Transport.start();
+                    setTimeout(timer, 4000)
+                }
+                else {
+                    timer()
+                }
             }
         });
 
