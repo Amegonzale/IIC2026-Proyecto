@@ -8,6 +8,7 @@ let allStatesData = {};
 function createLineGraph(data, selectedState = null, currentYear = "2011") {
     const years = Object.keys(data).sort();
     const states = new Set();
+    const wstate = [];
 
     years.forEach(year => {
         Object.keys(data[year]).forEach(state => states.add(state));
@@ -25,14 +26,78 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             yValues.push(data[year][state].value * 2); // Per 50,000 students
         });
 
+        let yMax = Math.max(...yValues)
+
+        if (yMax >= 180) {
+            yMax = 100
+        }
+        else if (yMax >= 30) {
+            yMax = 40
+        }
+        else if (yMax >= 10) {
+            yMax = 20
+        }
+        else {
+            yMax = 10
+        }
+
         // Si fue seleccionado en el mapa o grafico
         const isSelected = selectedState === state;
 
         const markerSizes = years.map(year => {
             if (currentYear && year === currentYear) {
-                return isSelected ? 15 : 10;
+                return isSelected ? 0 : 0; // 10 : 5 sin la linea
             }
-            return isSelected ? 4 : 2;
+            return 0;
+        });
+
+        const grey = 'rgba(159, 159, 159, 1)';
+        //const grey = 'gray';
+        const trace = {
+            x: xValues,
+            y: yValues,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: state,
+            line: {
+                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? grey : grey), // No me gusta el color default ;;
+                width: isSelected ? 4 : 1 // Al seleccionarlo se pone mas waton
+            },
+            marker: {
+                size: markerSizes,
+                color: isSelected ? '#000000' : (selectedState ? grey : grey),
+                line: {
+                    width: currentYear ? years.map(y => y === currentYear ? 1 : 1) : 0,
+                    color: isSelected ? 'black' : (selectedState ? grey : grey),
+                },
+                opacity: 1,
+            },
+            opacity: selectedState && !isSelected ? 0.3 : 1,
+            showlegend: false,
+            uid: isSelected ? 'SELECTED' + yMax : state,
+        };
+
+        if (isSelected) {
+            selectedTrace.push(trace);
+            wstate.push(state)
+
+        }
+        else traces.push(trace);
+    });
+
+
+    if (wstate.length > 0) {
+        const state = wstate[0]
+        const xValues = [];
+        const yValues = [];
+
+        years.forEach(year => {
+            xValues.push(year);
+            yValues.push(data[year][state].value * 2);
+        });
+
+        const markerSizes = years.map(year => {
+            return 2;
         });
 
         const trace = {
@@ -42,26 +107,60 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             mode: 'lines+markers',
             name: state,
             line: {
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'), // No me gusta el color default ;;
-                width: isSelected ? 4 : 2 // Al seleccionarlo se pone mas waton
+                color: 'black', 
+                width: 6
             },
             marker: {
                 size: markerSizes,
-                color: isSelected ? 'rgba(255, 21, 21, 1)' : (selectedState ? 'gray' : 'gray'),
+                color: 'white',
                 line: {
-                    width: currentYear ? years.map(y => y === currentYear ? 2 : 0) : 0,
+                    width: 0,
                     color: 'white'
                 }
             },
-            opacity: selectedState && !isSelected ? 0.3 : 0.9,
-            showlegend: false
+            opacity: 1,
+            showlegend: false,
+            uid: 'SELECTED-OUTLINE',
         };
 
-        if (isSelected) selectedTrace.push(trace);
-        else traces.push(trace);
+        traces.push(trace)
+    }
+
+    const avgxValues = [];
+    const avgyValues = [];
+
+    years.forEach(year => {
+            avgxValues.push(year);
+            const avgValue = Array.from(states).reduce((sum, state) => sum + data[year][state].value, 0) / states.size;
+            avgyValues.push(avgValue * 2);
     });
 
+    const avgMarkerSizes = years.map(year => {
+        if (currentYear && year === currentYear) {
+            return (selectedTrace.length > 0) ? 0 : 0; // 5 : 10 sin la linea
+        }
+        return 0;
+    });
+
+    const avgTrace = {
+        x: avgxValues,
+        y: avgyValues,
+        type: 'scatter',
+        mode: 'lines+markers',
+        name: 'Average',
+        line: {
+            color: 'rgba(0, 0, 0, 1)',
+            width: 4,
+            dash: 'dashdot'
+        },
+        marker: {
+            size: avgMarkerSizes
+        },
+    };
+
+    traces.push(avgTrace);
     if (selectedTrace.length > 0) traces.push(...selectedTrace);
+    // else traces.push(avgTrace); // por si queremos mostrarlo solo cuando no hay seleccionado
 
     const layout = {
         title: {
@@ -82,11 +181,30 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             side: 'right'
 
         },
+        shapes: currentYear ? [{
+            type: 'line',
+            xref: 'x',
+            x0: String(currentYear),
+            x1: String(currentYear),
+            yref: 'paper',
+            y0: 0,
+            y1: 1,
+            line: { color: 'rgba(0, 0, 0, 0.5)', width: 2, dash: 'solid' },
+            layer: 'above'
+        }] : [],
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         margin: { l: 20, r: 40, t: 100, b: 40 },
         height: 350,
-        width: 600
+        width: 600,
+        legend: {
+            x: 0.90,
+            y: 1.13,
+            xanchor: 'left',
+            yanchor: 'top',
+            bgcolor: 'rgba(255,255,255,0.85)',
+            font: { size: 10 }
+        },
     };
 
     const config = {
@@ -148,7 +266,7 @@ fetch('data.json')
                         xanchor: 'left',
                         thickness: 8,
                         len: 0.85,
-                        outlinewidth: 0
+                        outlinewidth: 1
                     },
                     zmin: 0,
                     zmax: ZMAX
@@ -175,7 +293,8 @@ fetch('data.json')
                 xanchor: 'left',
                 thickness: 8,
                 len: 0.85,
-                outlinewidth: 0
+                outlinewidth: 1,
+
             },
             zmin: 0,
             zmax: ZMAX
@@ -225,7 +344,7 @@ fetch('data.json')
                 pad: 0
             },
             height: 520,
-            width: 850
+            width: 800
         };
 
         Plotly.newPlot("choroplethMap", dataInit, layout, {

@@ -60,21 +60,20 @@ div#choroplethMap {
     border-radius: 20px;
     overflow: hidden;
     max-width: 100%;
-}
-
-div#choroplethMap {
-    width: min-content;
+   /* width: min-content; */
+   width: 100%;
 }
 
 div#lineGraph {
     background-color: white;
     height: auto;
     /* max-width: 95%;
-    width: 95%; */
-    border-top-left-radius: 20px;
+    width: min-content; */
+    width: 100%;
+    /* border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     overflow: hidden;
 }
 
@@ -82,15 +81,18 @@ div#rightSide {
     height: 520px;
     display: flex;
     flex-direction: column;
-    background-color: #c33030;
+    background-color: #ffffff;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
+    width: 100%;
+    /* width: min-content; */
+
 }
 
 div#info {
-    background-color: #c33030;
+    background-color: #b1b0b4;
     flex: 1;
     border-radius: 20px;
     padding: 2%;
@@ -110,8 +112,10 @@ div.plot-container.plotly {
 text.gtitle {
 
     font-size: 1.5em !important;
-    fill: #10071d !important;
-
+    fill: #000000 !important;
+    font-family: sans-serif;
+    font-weight: bold !important;
+    font-size: 1.8em !important;
 }
 
 
@@ -158,7 +162,7 @@ div#lineGraphContainer {
 
 div#choroplethMapContainer {
     justify-content: center;
-
+    width: 100%;
 }
 
 
@@ -171,4 +175,25 @@ div#choroplethMapContainer {
 
 g.slider-group {
     transform: translateX(45px) translateY(440px);
+}
+
+
+g.trace.scatter.traceSELECTED100>g.lines>path.js-line {
+    stroke: url(#verticalGradient100) !important;
+    outline: 2px solid white;
+}
+
+g.trace.scatter.traceSELECTED40>g.lines>path.js-line {
+    stroke: url(#verticalGradient40) !important;
+
+}
+
+g.trace.scatter.traceSELECTED20>g.lines>path.js-line {
+    stroke: url(#verticalGradient20) !important;
+
+}
+
+g.trace.scatter.traceSELECTED10>g.lines>path.js-line {
+    stroke: url(#verticalGradient10) !important;
+
 }
