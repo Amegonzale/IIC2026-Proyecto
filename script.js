@@ -524,11 +524,11 @@ function updateInfo(year, state) {
     const info = document.getElementById('info');
     if (!state) {
         const context = contextYearly[year];
-        info.innerHTML = `<p style="font-family: sans-serif">${context}</p>`;
+        info.innerHTML = `<p style="font-family: sans-serif">Context: ${year} <br> ${context}</p>`;
         console.log(context);
     } else {
         const context = contextStates[state];
-        info.innerHTML = `<p style="font-family: sans-serif">${context}</p>`;
+        info.innerHTML = `<p style="font-family: sans-serif">Context: ${allStatesData["2011"][state].stateName} <br> ${context}</p>`;
         console.log(context);
     }
 }
