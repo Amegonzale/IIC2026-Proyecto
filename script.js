@@ -473,13 +473,13 @@ fetch('data_yearly.json')
 
 function updateInfo(year, state) {
     const info = document.getElementById('info');
-    if (! state){
+    if (!state) {
         const context = contextYearly[year];
-        info.textContent = context || 'No context available for this year';
+        info.innerHTML = context || 'No context available';
         console.log(context);
     } else {
         const context = contextStates[state];
-        info.textContent = context || 'No context available for this year';
+        info.innerHTML = context || 'No context available';
         console.log(context);
     }
 }
