@@ -1,5 +1,6 @@
 // Crear variables globales
 const global_data = "data.json";
+const image = { img: "resources/usmap.png" };
 const shot = new Tone.Player("resources/single-shot-2.mp3").toDestination();
 let selectedState = null;
 let currentYear = null;
@@ -287,7 +288,7 @@ fetch('data.json')
                         outlinewidth: 1
                     },
                     zmin: 0,
-                    zmax: ZMAX
+                    zmax: ZMAX,
                 }]
             });
             if (year === years[0]) {
@@ -344,7 +345,7 @@ fetch('data.json')
             }],
             images: [
                 {
-                    source: "usmap.png",
+                    source: image['img'],
                     x: 0.52,
                     y: 0.47,
                     sizex: 0.79,
@@ -363,13 +364,17 @@ fetch('data.json')
             },
             height: 520,
             width: 800,
-            dragmode: false
+            dragmode: false,
+            activeselection: 'black',
+
         };
 
         Plotly.newPlot("choroplethMap", dataInit, layout, {
             scrollZoom: false,
             displayModeBar: false,
-            responsive: false
+            responsive: false,
+
+
         }).then(() => {
             Plotly.addFrames("choroplethMap", frames);
         });
@@ -379,8 +384,26 @@ fetch('data.json')
             if (eventData.points[0] && eventData.points[0].location) {
                 const clickedState = eventData.points[0].location;
                 selectedState = selectedState === clickedState ? null : clickedState;
+
+
                 createLineGraph(allStatesData, selectedState, currentYear);
                 if (selectedState != null) {
+                    image['img'] = "resources/usmap-" + clickedState + ".png";
+                    var update = {
+                        images: [
+                            {
+                                source: image['img'],
+                                x: 0.52,
+                                y: 0.47,
+                                sizex: 0.79,
+                                sizey: 0.79,
+                                xanchor: "center",
+                                yanchor: "middle",
+                                layer: "above"
+                            }
+                        ],
+                    }
+                    Plotly.relayout("choroplethMap", update)
                     let max = Math.min(allStatesInfo[selectedState][0] / 10, 15)
                     loop.playbackRate = max
                     console.log(max)
@@ -388,6 +411,23 @@ fetch('data.json')
                     setTimeout(timer, 4000)
                 }
                 else {
+                    image['img'] = "resources/usmap.png";
+                    var update = {
+                        images: [
+                            {
+                                source: image['img'],
+                                x: 0.52,
+                                y: 0.47,
+                                sizex: 0.79,
+                                sizey: 0.79,
+                                xanchor: "center",
+                                yanchor: "middle",
+                                layer: "above"
+                            }
+                        ],
+                    }
+
+                    Plotly.relayout("choroplethMap", update)
                     timer()
                 }
             }
