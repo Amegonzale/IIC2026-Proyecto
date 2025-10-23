@@ -5,8 +5,9 @@ const shot = new Tone.Player("resources/single-shot-2.mp3").toDestination();
 let selectedState = null;
 let currentYear = "2011";
 let allStatesData = {};
-let allStatesInfo = {};
 let playbackrate = 1;
+let lastPlay = 0;
+let lineGraphWidth = 600;
 
 // Contexto
 const global_yearly = "data_yearly.json";
@@ -20,10 +21,49 @@ const loop = new Tone.Loop(time => {
     shot.start(0);
 }, "1n").start(0);
 
-
-
 function timer() {
-    Tone.Transport.stop()
+    console.log(lastPlay)
+    const timestamp = Date.now();
+    console.log(timestamp)
+    if (timestamp - lastPlay < 4000) {
+        // setTimeout(timer, lastPlay - timestamp)
+        console.log("NS:", timestamp - lastPlay)
+    }
+    else {
+        console.log("S:", timestamp - lastPlay);
+        Tone.Transport.stop();
+    }
+}
+
+function reportWindowSize() {
+    width = window.innerWidth;
+
+    if (width < 1290) {
+        document.getElementById("lineGraph").style.display = "none";
+        document.getElementById("lineGraphTitle").style.display = "block";
+
+    }
+    else {
+        document.getElementById("lineGraph").style.display = "block";
+        document.getElementById("lineGraphTitle").style.display = "none";
+        if (width <= 1350) {
+            console.log(window.innerWidth);
+            lineGraphWidth = 500;
+
+            Plotly.relayout("lineGraph", { width: lineGraphWidth })
+        }
+        else if (width <= 1400) {
+            lineGraphWidth = 550;
+            Plotly.relayout("lineGraph", { width: lineGraphWidth })
+        }
+        else {
+            if (lineGraphWidth < 600) {
+                lineGraphWidth = 600;
+                Plotly.relayout("lineGraph", { width: lineGraphWidth })
+            }
+        }
+    }
+
 }
 
 // Line graph ñom
@@ -47,9 +87,6 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             xValues.push(year);
             yValues.push(data[year][state].value * 2); // Per 50,000 students
         });
-
-        allStatesInfo[state] = [Math.max(...yValues), data['2011'][state].info]
-
 
         let yMax = Math.max(...yValues)
 
@@ -109,7 +146,6 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         }
         else traces.push(trace);
     });
-
 
     if (wstate.length > 0) {
         const state = wstate[0]
@@ -221,7 +257,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
         paper_bgcolor: 'rgba(0,0,0,0)',
         margin: { l: 20, r: 40, t: 100, b: 40 },
         height: 350,
-        width: 600,
+        width: lineGraphWidth,
         legend: {
             x: 0.90,
             y: 1.13,
@@ -411,11 +447,15 @@ fetch('data.json')
                         ],
                     }
                     Plotly.relayout("choroplethMap", update)
-                    let max = Math.min(allStatesInfo[selectedState][0] / 10, 15)
-                    loop.playbackRate = max
-                    console.log(max)
+                    // console.log(allStatesData, selectedState, currentYear)
+                    // console.log(max)
+                    loop.playbackRate = Math.min(allStatesData[currentYear][selectedState].value / 9, 15)
+                    lastPlay = Date.now()
                     Tone.Transport.start();
                     setTimeout(timer, 4000)
+
+                    let LGT = document.getElementById("lineGraphTitle");
+                    LGT.innerHTML = "<h2>" + (selectedState ? `${data[years[0]][selectedState].stateName}` : 'All States') + "</h2>"
                 }
                 else {
                     image['img'] = "resources/usmap.png";
@@ -434,6 +474,9 @@ fetch('data.json')
                         ],
                     }
 
+                    let LGT = document.getElementById("lineGraphTitle");
+                    LGT.innerHTML = "<h2>All States</h2>"
+
                     Plotly.relayout("choroplethMap", update)
                     timer()
                 }
@@ -447,11 +490,20 @@ fetch('data.json')
                 updateYear(currentYear);
             }
         });
+        reportWindowSize();
 
     })
     .catch(error => console.error('Error:', error));
 
 function updateYear(year) {
+    if (selectedState != null) {
+        loop.playbackRate = Math.min(allStatesData[currentYear][selectedState].value / 9, 15)
+    }
+    currentYear = year;
+    createLineGraph(allStatesData, selectedState, currentYear);
+}
+
+window.addEventListener("resize", reportWindowSize);
     createLineGraph(allStatesData, selectedState, year);
     updateInfo(year, selectedState);
 }
