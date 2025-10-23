@@ -240,11 +240,11 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
     Plotly.newPlot("lineGraph", traces, layout, config);
 
     // Click event desde el el grafico :3
-    document.getElementById('lineGraph').on('plotly_click', function (eventData) {
-        const clickedState = eventData.points[0].data.name;
-        selectedState = selectedState === clickedState ? null : clickedState;
-        createLineGraph(allStatesData, selectedState, currentYear);
-    });
+    //document.getElementById('lineGraph').on('plotly_click', function (eventData) {
+    //    const clickedState = eventData.points[0].data.name;
+    //    selectedState = selectedState === clickedState ? null : clickedState;
+    //    createLineGraph(allStatesData, selectedState, currentYear);
+    //});
 }
 
 // Cargar datos y actualizar variables globales
@@ -394,6 +394,7 @@ fetch('data.json')
 
                 createLineGraph(allStatesData, selectedState, currentYear);
                 if (selectedState != null) {
+                    updateInfo(currentYear, selectedState);
                     image['img'] = "resources/usmap-" + clickedState + ".png";
                     var update = {
                         images: [
@@ -472,5 +473,13 @@ fetch('data_yearly.json')
 
 function updateInfo(year, state) {
     const info = document.getElementById('info');
-    console.log('AAAAAAAAA');
+    if (! state){
+        const context = contextYearly[year];
+        info.textContent = context || 'No context available for this year';
+    } else {
+        const context = contextStates[state];
+        info.textContent = context || 'No context available for this year';
+
+        console.log(context);
+    }
 }
