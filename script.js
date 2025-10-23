@@ -391,10 +391,10 @@ fetch('data.json')
                 const clickedState = eventData.points[0].location;
                 selectedState = selectedState === clickedState ? null : clickedState;
 
+                updateInfo(currentYear, selectedState);
 
                 createLineGraph(allStatesData, selectedState, currentYear);
                 if (selectedState != null) {
-                    updateInfo(currentYear, selectedState);
                     image['img'] = "resources/usmap-" + clickedState + ".png";
                     var update = {
                         images: [
