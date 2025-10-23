@@ -223,3 +223,8 @@ div#lineGraphTitle {
     display: none;
     margin-bottom: 30px;
 }
+
+g.slider-group * {
+  cursor: pointer !important;
+  pointer-events: all;
+}
