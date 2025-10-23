@@ -500,14 +500,11 @@ function updateYear(year) {
         loop.playbackRate = Math.min(allStatesData[currentYear][selectedState].value / 9, 15)
     }
     currentYear = year;
-    createLineGraph(allStatesData, selectedState, currentYear);
-}
-
-window.addEventListener("resize", reportWindowSize);
     createLineGraph(allStatesData, selectedState, year);
     updateInfo(year, selectedState);
 }
 
+window.addEventListener("resize", reportWindowSize);
 // Contexts
 fetch('data_states.json')
     .then(response => response.json())
