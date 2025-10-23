@@ -1,30 +1,30 @@
 h2,
 h3 {
     margin: 0;
+    font-family: sans-serif;
 }
 
 h2 {
-    font-size: xx-large;
+    font-size: 2.1em;
     color: #000000;
     margin-bottom: 3px;
     margin-top: 10px;
 }
 
 h3 {
-    font-size: medium;
+    font-size: 1.3em;
     color: #980a0a;
 }
 
 .title {
     position: absolute;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 35px;
     text-align: center;
 }
 
 #graph {
     background: #fff;
-
     display: flex;
     margin: auto;
     flex-direction: column;
@@ -42,13 +42,14 @@ body {
 }
 
 .container {
-    margin-top: 3%;
+    margin-top: 48px;
     margin-left: 1%;
     margin-right: 1%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
     height: 100%;
+    min-height: 670px;
     grid-template-rows: 1fr auto;
     column-gap: 5px;
 }
@@ -56,25 +57,26 @@ body {
 div#choroplethMap {
     margin: 0px;
     height: auto;
-    /* min-width: 800px; */
     border-radius: 20px;
     overflow: hidden;
     max-width: 100%;
-   /* width: min-content; */
-   width: 100%;
+    width: 100%;
+    justify-items: end;
 }
 
 div#lineGraph {
     background-color: white;
     height: auto;
-    /* max-width: 95%;
-    width: min-content; */
-    width: 100%;
+    max-width: 600px;
+    /* width: min-content; */
+    /* width: 100%; */
     /* border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px; */
     overflow: hidden;
+    margin-right: 4%;
+    /* margin: auto; */
 }
 
 div#rightSide {
@@ -87,22 +89,41 @@ div#rightSide {
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     width: 100%;
+    justify-items: center;
+    justify-content: center;
     /* width: min-content; */
 
+}
+
+div#rightSideBox {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 div#info {
     background-color: #b1b0b4;
     flex: 1;
     border-radius: 20px;
-    padding: 2%;
+    /* padding: 2%; */
+    max-width: 800px;
+    /* margin: auto; */
+
 }
 
+div#info>p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+}
 
 
 div.plot-container.plotly {
     width: auto !important;
-    margin: auto !important;
+    /* margin: auto !important; */
 }
 
 /* tspan {
@@ -154,7 +175,6 @@ div#lineGraphContainer {
 }
 
 div#lineGraphContainer {
-    justify-content: start;
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
@@ -174,7 +194,7 @@ div#choroplethMapContainer {
 
 
 g.slider-group {
-    transform: translateX(45px) translateY(440px);
+    transform: translateX(20px) translateY(440px);
 }
 
 
@@ -196,4 +216,10 @@ g.trace.scatter.traceSELECTED20>g.lines>path.js-line {
 g.trace.scatter.traceSELECTED10>g.lines>path.js-line {
     stroke: url(#verticalGradient10) !important;
 
+}
+
+
+div#lineGraphTitle {
+    display: none;
+    margin-bottom: 30px;
 }
