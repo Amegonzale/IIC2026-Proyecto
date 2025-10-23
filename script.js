@@ -3,11 +3,17 @@ const global_data = "data.json";
 const image = { img: "resources/usmap.png" };
 const shot = new Tone.Player("resources/single-shot-2.mp3").toDestination();
 let selectedState = null;
-let currentYear = 2011;
+let currentYear = "2011";
 let allStatesData = {};
 let playbackrate = 1;
 let lastPlay = 0;
 let lineGraphWidth = 600;
+
+// Contexto
+const global_yearly = "data_yearly.json";
+const global_states = "data_states.json";
+let contextYearly = {};
+let contextStates = {};
 
 // Loop sonido
 const loop = new Tone.Loop(time => {
@@ -270,11 +276,11 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
     Plotly.newPlot("lineGraph", traces, layout, config);
 
     // Click event desde el el grafico :3
-    document.getElementById('lineGraph').on('plotly_click', function (eventData) {
-        const clickedState = eventData.points[0].data.name;
-        selectedState = selectedState === clickedState ? null : clickedState;
-        createLineGraph(allStatesData, selectedState, currentYear);
-    });
+    //document.getElementById('lineGraph').on('plotly_click', function (eventData) {
+    //    const clickedState = eventData.points[0].data.name;
+    //    selectedState = selectedState === clickedState ? null : clickedState;
+    //    createLineGraph(allStatesData, selectedState, currentYear);
+    //});
 }
 
 // Cargar datos y actualizar variables globales
@@ -421,6 +427,7 @@ fetch('data.json')
                 const clickedState = eventData.points[0].location;
                 selectedState = selectedState === clickedState ? null : clickedState;
 
+                updateInfo(currentYear, selectedState);
 
                 createLineGraph(allStatesData, selectedState, currentYear);
                 if (selectedState != null) {
@@ -490,13 +497,41 @@ fetch('data.json')
 
 function updateYear(year) {
     if (selectedState != null) {
-
         loop.playbackRate = Math.min(allStatesData[currentYear][selectedState].value / 9, 15)
     }
     currentYear = year;
     createLineGraph(allStatesData, selectedState, currentYear);
 }
 
-
-
 window.addEventListener("resize", reportWindowSize);
+    createLineGraph(allStatesData, selectedState, year);
+    updateInfo(year, selectedState);
+}
+
+// Contexts
+fetch('data_states.json')
+    .then(response => response.json())
+    .then(data => {
+        contextStates = data;
+    })
+    .catch(error => console.error('Error:', error));
+
+fetch('data_yearly.json')
+    .then(response => response.json())
+    .then(data => {
+        contextYearly = data;
+    })
+    .catch(error => console.error('Error:', error));
+
+function updateInfo(year, state) {
+    const info = document.getElementById('info');
+    if (!state) {
+        const context = contextYearly[year];
+        info.innerHTML = `<p style="font-family: sans-serif">${context}</p>`;
+        console.log(context);
+    } else {
+        const context = contextStates[state];
+        info.innerHTML = `<p style="font-family: sans-serif">${context}</p>`;
+        console.log(context);
+    }
+}
