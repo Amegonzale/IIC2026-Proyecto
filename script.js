@@ -108,7 +108,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
         const markerSizes = years.map(year => {
             if (currentYear && year === currentYear) {
-                return isSelected ? 0 : 0; // 10 : 5 sin la linea
+                return isSelected ? 8 : 5; // 10 : 5 sin la linea
             }
             return 0;
         });
@@ -198,7 +198,7 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
 
     const avgMarkerSizes = years.map(year => {
         if (currentYear && year === currentYear) {
-            return (selectedTrace.length > 0) ? 0 : 0; // 5 : 10 sin la linea
+            return (selectedTrace.length > 0) ? 5 : 10; // 5 : 10 sin la linea
         }
         return 0;
     });
@@ -215,7 +215,12 @@ function createLineGraph(data, selectedState = null, currentYear = "2011") {
             dash: 'dashdot'
         },
         marker: {
-            size: avgMarkerSizes
+            size: avgMarkerSizes,
+            line: {
+                width: 0,
+                color: 'white'
+            },
+            color: 'black'
         },
     };
 
