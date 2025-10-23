@@ -476,10 +476,10 @@ function updateInfo(year, state) {
     if (! state){
         const context = contextYearly[year];
         info.textContent = context || 'No context available for this year';
+        console.log(context);
     } else {
         const context = contextStates[state];
         info.textContent = context || 'No context available for this year';
-
         console.log(context);
     }
 }
