@@ -475,11 +475,11 @@ function updateInfo(year, state) {
     const info = document.getElementById('info');
     if (!state) {
         const context = contextYearly[year];
-        info.innerHTML = context || 'No context available';
+        info.innerHTML = `<p style="font-family: sans-serif">${context}</p>`;
         console.log(context);
     } else {
         const context = contextStates[state];
-        info.innerHTML = context || 'No context available';
+        info.innerHTML = `<p style="font-family: sans-serif">${context}</p>`;
         console.log(context);
     }
 }
