@@ -3,10 +3,16 @@ const global_data = "data.json";
 const image = { img: "resources/usmap.png" };
 const shot = new Tone.Player("resources/single-shot-2.mp3").toDestination();
 let selectedState = null;
-let currentYear = null;
+let currentYear = "2011";
 let allStatesData = {};
 let allStatesInfo = {};
 let playbackrate = 1;
+
+// Contexto
+const global_yearly = "data_yearly.json";
+const global_states = "data_states.json";
+let contextYearly = {};
+let contextStates = {};
 
 // Loop sonido
 const loop = new Tone.Loop(time => {
@@ -445,6 +451,26 @@ fetch('data.json')
     .catch(error => console.error('Error:', error));
 
 function updateYear(year) {
-    currentYear = year;
-    createLineGraph(allStatesData, selectedState, currentYear);
+    createLineGraph(allStatesData, selectedState, year);
+    updateInfo(year, selectedState);
+}
+
+// Contexts
+fetch('data_states.json')
+    .then(response => response.json())
+    .then(data => {
+        contextStates = data;
+    })
+    .catch(error => console.error('Error:', error));
+
+fetch('data_yearly.json')
+    .then(response => response.json())
+    .then(data => {
+        contextYearly = data;
+    })
+    .catch(error => console.error('Error:', error));
+
+function updateInfo(year, state) {
+    const info = document.getElementById('info');
+    console.log('AAAAAAAAA');
 }
