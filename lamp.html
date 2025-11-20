@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lamp</title>
+    </head>
+    <body>
+        <script src="https://app.protobject.com/framework/p.js"></script>
+        <script src="config.js"></script>
+        <script>
+        const lamp = new Protobject.Lamp({
+            width: "100%",
+            height: "100%",
+            zIndex: 5,
+            borderRadius: "0px"
+        });
+        Protobject.Core.onReceived(function (message) {
+            if (message) {
+                lamp.setColor({ r: 255, g: 0, b: 0 });
+            } else {
+                lamp.setColor({ r: 0, g: 0, b: 0 });
+            }
+        });
+        </script>
+    </body>
+</html>

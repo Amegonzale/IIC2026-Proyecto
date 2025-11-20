@@ -17,8 +17,14 @@ let contextStates = {};
 
 // Loop sonido
 const loop = new Tone.Loop(time => {
-    console.log(time);
+    // console.log(time);
     shot.start(0);
+    Protobject.Core.send(true).to("lamp.html");
+    // console.log("SENDEDDDD");
+    setTimeout(() => {
+        Protobject.Core.send(false).to("lamp.html");
+        // console.log("STOPED");
+    }, 300);
 }, "1n").start(0);
 
 function timer() {
@@ -454,10 +460,10 @@ fetch('data.json')
                     Plotly.relayout("choroplethMap", update)
                     // console.log(allStatesData, selectedState, currentYear)
                     // console.log(max)
-                    loop.playbackRate = Math.min(allStatesData[currentYear][selectedState].value / 9, 15)
-                    lastPlay = Date.now()
+                    loop.playbackRate = Math.min(allStatesData[currentYear][selectedState].value / 9, 15);
+                    lastPlay = Date.now();
                     Tone.Transport.start();
-                    setTimeout(timer, 4000)
+                    setTimeout(timer, 4000);
 
                     let LGT = document.getElementById("lineGraphTitle");
                     LGT.innerHTML = "<h2>" + (selectedState ? `${data[years[0]][selectedState].stateName}` : 'All States') + "</h2>"
@@ -502,7 +508,8 @@ fetch('data.json')
 
 function updateYear(year) {
     if (selectedState != null) {
-        loop.playbackRate = Math.min(allStatesData[currentYear][selectedState].value / 9, 15)
+        const frecuency = Math.min(allStatesData[currentYear][selectedState].value / 9, 15);
+        loop.playbackRate = frecuency;
     }
     currentYear = year;
     createLineGraph(allStatesData, selectedState, year);

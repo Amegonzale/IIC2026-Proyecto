@@ -1,85 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualización</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
-    <script src="https://cdn.plot.ly/plotly-3.1.0.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visualización</title>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
+        <script src="https://cdn.plot.ly/plotly-3.1.0.min.js"></script>
+    </head>
 
-<body>
-    <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
-        <linearGradient id="verticalGradient100" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="rgba(133, 0, 0, 1)" />
-            <stop offset="20%" stop-color="rgba(186, 0, 0, 1)" />
-            <stop offset="40%" stop-color="rgba(249, 21, 21, 1)" />
-            <stop offset="60%" stop-color="rgba(253, 80, 80, 1)" />
-            <stop offset="80%" stop-color="rgba(251, 127, 127, 1)" />
-            <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
-        </linearGradient>
-    </svg>
-    <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
-        <linearGradient id="verticalGradient40" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="rgba(253, 80, 80, 1)" />
-            <stop offset="50%" stop-color="rgba(251, 127, 127, 1)" />
-            <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
-        </linearGradient>
-    </svg>
-    <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
-        <linearGradient id="verticalGradient20" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="rgba(251, 127, 127, 1)" />
-            <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
-        </linearGradient>
-    </svg>
-    <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
-        <linearGradient id="verticalGradient10" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="rgba(255, 172, 172, 1)" />
-            <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
-        </linearGradient>
-    </svg>
+    <body>
+        <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
+            <linearGradient id="verticalGradient100" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(133, 0, 0, 1)" />
+                <stop offset="20%" stop-color="rgba(186, 0, 0, 1)" />
+                <stop offset="40%" stop-color="rgba(249, 21, 21, 1)" />
+                <stop offset="60%" stop-color="rgba(253, 80, 80, 1)" />
+                <stop offset="80%" stop-color="rgba(251, 127, 127, 1)" />
+                <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
+            </linearGradient>
+        </svg>
+        <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
+            <linearGradient id="verticalGradient40" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(253, 80, 80, 1)" />
+                <stop offset="50%" stop-color="rgba(251, 127, 127, 1)" />
+                <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
+            </linearGradient>
+        </svg>
+        <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
+            <linearGradient id="verticalGradient20" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(251, 127, 127, 1)" />
+                <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
+            </linearGradient>
+        </svg>
+        <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
+            <linearGradient id="verticalGradient10" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(255, 172, 172, 1)" />
+                <stop offset="100%" stop-color="rgba(255, 200, 200, 1)" />
+            </linearGradient>
+        </svg>
 
-    <div class="main">
+        <div class="main">
 
-        <div class="title">
-            <h2 style="font-family: sans-serif;">How endangered is your child at school?</h2>
-            <h3 style="font-family: sans-serif;">Number of students that were in possesion of a firearm at schools
-                per 50,000
-                students
-                enrolled</h3>
-        </div>
-        <div class="container">
-            <div id="choroplethMapContainer" class="">
-                <div id="choroplethMap"></div>
-                <script src="script.js"></script>
+            <div class="title">
+                <h2 style="font-family: sans-serif;">How endangered is your child at school?</h2>
+                <h3 style="font-family: sans-serif;">Number of students that were in possesion of a firearm at schools
+                    per 50,000
+                    students
+                    enrolled</h3>
             </div>
-            <div id="lineGraphContainer" class="line-graph">
-                <div id="rightSide">
-                    <div id="rightSideBox">
-                        <div id="lineGraph"></div>
+            <div class="container">
+                <div id="choroplethMapContainer" class="">
+                    <div id="choroplethMap"></div>
+                    <script src="script.js"></script>
+                </div>
+                <div id="lineGraphContainer" class="line-graph">
+                    <div id="rightSide">
+                        <div id="rightSideBox">
+                            <div id="lineGraph"></div>
 
-                        <div id="lineGraphTitle">
-                            <h2>All States</h2>
+                            <div id="lineGraphTitle">
+                                <h2>All States</h2>
+                            </div>
+
+                            <div id="info">
+                                <p style="font-family: sans-serif;"><strong>Context: 2011</strong><br>Gun violence in
+                                    schools intensified compared to the previous decade, so discussions about arming staff
+                                    and improving campus security were made. Although systematic tracking of mishandled guns
+                                    hadn’t begun, several deadly attacks revealed the danger of firearm access on campus.
+                                    Five major shootings left 10 dead and 7 injured (e.g., Millard South High School,
+                                    Virginia Tech). </p>
+                            </div>
                         </div>
-
-                        <div id="info">
-                            <p style="font-family: sans-serif;"><strong>Context: 2011</strong><br>Gun violence in
-                                schools intensified compared to the previous decade, so discussions about arming staff
-                                and improving campus security were made. Although systematic tracking of mishandled guns
-                                hadn’t begun, several deadly attacks revealed the danger of firearm access on campus.
-                                Five major shootings left 10 dead and 7 injured (e.g., Millard South High School,
-                                Virginia Tech). </p>
-                        </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
+        <script src="https://app.protobject.com/framework/p.js"></script>
+        <script src="config.js"></script>
+    </body>
 
-</body>
+    <style>
+        #ProtobjectPlusButton {
+            width: 80px !important;
+        }
+
+        #ProtobjectPlusButton:after {
+            content: " Connect";
+        }
+    </style>
 
 </html>
